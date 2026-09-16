@@ -1,0 +1,61 @@
+/* Generated from tokens.json. Do not edit by hand; regenerate when tokens.json changes. */
+
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f7f8;
+  --color-neutral-100: #eeeef0;
+  --color-neutral-200: #d9d9de;
+  --color-neutral-400: #8b8b96;
+  --color-neutral-600: #4a4a55;
+  --color-neutral-800: #1f1f24;
+  --color-neutral-900: #111114;
+
+  --color-brand-100: #e8eef8;
+  --color-brand-500: #1f4ea3;
+  --color-brand-600: #173b7c;
+
+  --color-feedback-success: #1b7a4e;
+  --color-feedback-warning: #b36b00;
+  --color-feedback-danger: #b42318;
+
+  --space-0: 0px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+}
+
+@theme {
+  --color-neutral-0: var(--color-neutral-0);
+  --color-brand-500: var(--color-brand-500);
+  --font-sans: var(--font-family-sans);
+  --spacing-4: var(--space-4);
+  --spacing-8: var(--space-8);
+  --spacing-12: var(--space-12);
+  --spacing-16: var(--space-16);
+  --spacing-24: var(--space-24);
+  --spacing-32: var(--space-32);
+  --spacing-48: var(--space-48);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
