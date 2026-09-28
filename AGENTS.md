@@ -91,12 +91,28 @@ Whenever an agent generates or modifies an interactive component (Button, Input,
 
 ---
 
-## 5. Self-Correction & Verification Checklist
+## 5. Design Taste & Anti-Slop Directives
+
+Agents must enforce the **Anti-Slop Enterprise Standard** ([`foundations/taste.md`](foundations/taste.md) / [`.agents/skills/ach-taste/SKILL.md`](.agents/skills/ach-taste/SKILL.md)):
+
+1. **Mandatory Design Read**: State your one-line read before generating code:
+   `"ACH Design Read: <Product Pilar> | <Surface Category> | Dials: [Density: X, Friction: Y, Motion: Z] | Target: <Persona>"`
+2. **Kill Generic Card Syndrome**: Do not wrap every field or metric in a white card. Use whitespace, subtle borders (`border-ach-neutral-200`), and canvas background (`bg-ach-neutral-50`).
+3. **Tabular Figures for Numbers**: All financial amounts, tax numbers, and metrics must use `font-variant-numeric: tabular-nums` or `font-mono`.
+4. **Absolute Em-Dash Ban**: Never use `—` anywhere in UI copy. Use periods, commas, or simple hyphens (`-`).
+5. **No AI Purple Glows or Decorative Motion**: Use only verified ACH brand tokens (`color.brand.500`). Zero unmotivated animations in data-entry flows.
+
+---
+
+## 6. Self-Correction & Verification Checklist
 
 Before presenting UI code to the user, run this self-audit:
 
-- [ ] **Zero Hardcoded Styles**: Are there any `#hex` colors or arbitrary pixel values in style tags or inline styles? If yes, replace them with design tokens.
+- [ ] **Design Read Stated**: Did I declare the one-line `ACH Design Read`?
+- [ ] **Zero Hardcoded Styles**: Are there any `#hex` colors or arbitrary pixel values? (Must be `var(--ach-*)`).
+- [ ] **Tabular Figures**: Are numeric columns, currency, and metrics styled with `tabular-nums`?
 - [ ] **Single Primary Action**: Does the screen have at most ONE primary button?
+- [ ] **No Generic Card Overload**: Is content grouped cleanly without wrapping everything in nested shadow cards?
+- [ ] **Zero Em-Dash Violations**: Is visible text completely free of `—`?
 - [ ] **Consistent Verbs**: Are button labels using standard action verbs ("Continue", "Save changes", "Review") instead of non-standard ones ("Next", "Submit")?
-- [ ] **Accessibility**: Do form inputs have associated `<label>` elements or `aria-label`? Do interactive elements have appropriate `aria-disabled` / `aria-busy` attributes?
-- [ ] **Error Recovery**: If an error state is displayed, does it tell the user *how* to fix it?
+- [ ] **Accessibility & Error Recovery**: Do inputs have `<label>`, and do error messages explain how to fix the issue?
