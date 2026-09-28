@@ -11,6 +11,7 @@ Both human engineers and AI coding agents (Cursor, Antigravity, Claude Code, Git
 - **🤖 AI Agent Instructions**: See [`AGENTS.md`](AGENTS.md) for negative constraints, token resolutions, and decision trees.
 - **📦 Practical Integration Guide**: See [`docs/integration-guide.md`](docs/integration-guide.md) for how to use this repository in other apps (Git Submodule, Cursor rules, Tailwind config, and Figma sync).
 - **🎨 Component Template**: See [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) for standardizing new components extracted from Figma.
+- **🔌 Figma Plugin PRD**: See [`docs/prd-figma-plugin.md`](docs/prd-figma-plugin.md) for the product requirements to automate exporting Figma tokens & components into this repo.
 
 ---
 
@@ -75,6 +76,7 @@ Configure your project's `.cursor/rules/ach-design-system.mdc` or `.agents/skill
 | :--- | :--- |
 | [`AGENTS.md`](AGENTS.md) | **Primary operating instructions for AI coding assistants** |
 | [`docs/integration-guide.md`](docs/integration-guide.md) | **Step-by-step practical guide to consume this repo in apps** |
+| [`docs/prd-figma-plugin.md`](docs/prd-figma-plugin.md) | **PRD for Figma Plugin (Auto-export Tokens & Component MD)** |
 | [`design.md`](design.md) | Global rules, design principles, and brand voice |
 | [`tokens/`](tokens/tokens.json) | `tokens.json` (source) and `tokens.css` (generated CSS variables) |
 | [`foundations/`](foundations/color.md) | Color, typography, spacing, and accessibility baselines |
