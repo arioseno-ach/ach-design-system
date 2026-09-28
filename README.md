@@ -84,14 +84,14 @@ Configure your project's `.cursor/rules/ach-design-system.mdc` or `.agents/skill
 | [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) | Blueprint for extracting Figma components into markdown specs |
 | [`patterns/`](patterns/patterns.md) | Registry + layout pattern specs |
 | [`templates/`](templates/templates.md) | Registry + flow templates |
-| [`business-context/`](business-context/product-overview.md) | Product facts, voice guidelines, compliance rules |
+| [`business-context/`](business-context/product-overview.md) | Ecosystem overview + [OnlinePajak](business-context/onlinepajak.context.md), [Credor](business-context/credor.context.md), [Covia](business-context/covia.context.md) |
 | [`changelog/corrections-log.md`](changelog/corrections-log.md) | Rolling log of corrections and system updates |
 
 ---
 
 ## 📋 Backlog & Next Steps
 
+- [x] Document business context for Achilles ecosystem, OnlinePajak, Credor, and Covia.
 - [ ] Sync Figma styles into [`tokens/tokens.json`](tokens/tokens.json) and generate compiled `tokens.css`.
 - [ ] Extract remaining Figma components using [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md).
-- [ ] Fill in product name, personas, and unit constraints in `business-context/product-overview.md`.
 - [ ] Promote draft components, patterns, and templates as they pass review.
