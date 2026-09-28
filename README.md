@@ -1,62 +1,95 @@
 # ACH Design System
 
-**Status: ongoing.** This is a working scaffold, not a finished library. Specs, tokens, and product context will keep changing as the system is filled in.
+**Status: ongoing.** An agent-oriented design system scaffold and source of truth for product UI, design tokens, component specifications, and brand interaction rules.
 
-Source of truth for product UI, language, and interaction rules. Agents and humans should follow these files instead of inventing one-off styles or copy.
+Both human engineers and AI coding agents (Cursor, Antigravity, Claude Code, GitHub Copilot) should follow these files instead of inventing one-off styles, layout primitives, or unapproved copy.
 
-## What’s here
+---
 
-| Layer | What it is | Status |
-| --- | --- | --- |
-| [Tokens](tokens/tokens.json) | Color, type, space, radius | Draft |
-| [Foundations](foundations/color.md) | How tokens are used | Draft |
-| [Components](components/components.md) | Button, input, stepper | Draft |
-| [Patterns](patterns/patterns.md) | Top bar, bottom bar, dialog | Draft |
-| [Templates](templates/templates.md) | Wizard, onboarding | Draft |
-| [Business context](business-context/product-overview.md) | Product facts, voice, unit rules | Placeholder — fill in before shipping UI |
+## 🚀 Quick Navigation
+
+- **🤖 AI Agent Instructions**: See [`AGENTS.md`](AGENTS.md) for negative constraints, token resolutions, and decision trees.
+- **📦 Practical Integration Guide**: See [`docs/integration-guide.md`](docs/integration-guide.md) for how to use this repository in other apps (Git Submodule, Cursor rules, Tailwind config, and Figma sync).
+- **🎨 Component Template**: See [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) for standardizing new components extracted from Figma.
+
+---
+
+## System Architecture
 
 ```mermaid
 flowchart LR
-  tokens[Tokens] --> foundations[Foundations]
-  foundations --> components[Components]
-  components --> patterns[Patterns]
-  patterns --> templates[Templates]
+  tokens[Tokens\ntokens.json] --> foundations[Foundations\ncolor, type, space]
+  foundations --> components[Components\nbutton, input, stepper]
+  components --> patterns[Patterns\ntop-bar, dialog]
+  patterns --> templates[Templates\nwizard, onboarding]
+  business[Business Context\nbrand voice, legal] -.-> components
+  business -.-> templates
 ```
 
-## How to use this repo
+| Layer | What it is | Status |
+| :--- | :--- | :--- |
+| [Tokens](tokens/tokens.json) | W3C DTCG-compliant values for color, type, space, radius | Active |
+| [Foundations](foundations/color.md) | How tokens combine (accessibility, color roles, spacing) | Draft |
+| [Components](components/components.md) | Single UI primitives and code contracts (Button, Input, Stepper) | Draft |
+| [Patterns](patterns/patterns.md) | Recurring compound layouts (Top bar, Bottom action bar, Dialog) | Draft |
+| [Templates](templates/templates.md) | Full screen & user flows (Wizard, Onboarding) | Draft |
+| [Business Context](business-context/product-overview.md) | Product facts, voice, unit rules, and legal constraints | Placeholder |
 
-1. Read [`design.md`](design.md) for global rules, brand voice, and principles.
-2. Check [`business-context/`](business-context/product-overview.md) so copy and flows match the product.
-3. Use [`tokens/`](tokens/tokens.json) as the only source of visual values. Do not invent hex, type sizes, or spacing.
-4. Prefer existing [`components/`](components/components.md) and [`patterns/`](patterns/patterns.md) over new one-offs.
-5. Compose screens from [`templates/`](templates/templates.md) when a flow already exists.
-6. If you find a mistake or missing rule, append it to [`changelog/corrections-log.md`](changelog/corrections-log.md) and fold the correction back into the matching rule file.
+---
 
-## Layering
+## 🛠️ How to Consume in Other Projects
 
-| Layer | Purpose | Do not |
-| --- | --- | --- |
-| Tokens | Raw values | Hardcode values in components |
-| Foundations | How tokens are used | Redefine token values |
-| Components | Single UI primitives | Encode full page flows |
-| Patterns | Recurring layouts of components | Duplicate component specs |
-| Templates | Full flows | Redefine components or patterns |
+For in-depth setup, read the full [`docs/integration-guide.md`](docs/integration-guide.md). A quick summary:
 
-## File map
+### Option 1: Git Submodule (Recommended)
+Add this repo directly inside your downstream frontend project to give your local IDE and AI agents instant context:
+```bash
+git submodule add https://github.com/arioseno-ach/ach-design-system.git docs/design-system
+git submodule update --init --recursive
+```
+Import tokens in your application CSS:
+```css
+@import "../docs/design-system/tokens/tokens.css";
+```
+
+### Option 2: AI Agent Rules (Cursor / Antigravity / Claude)
+Configure your project's `.cursor/rules/ach-design-system.mdc` or `.agents/skills/` to point to `docs/design-system/AGENTS.md`. This prevents agents from hardcoding arbitrary hex colors or pixel spacing.
+
+---
+
+## 📐 Layering Rules
+
+| Layer | Purpose | Do Not |
+| :--- | :--- | :--- |
+| **Tokens** | Raw design values (`$value`, `$type`) | Hardcode values inside components |
+| **Foundations** | How tokens are applied & contrast guidelines | Redefine raw token values |
+| **Components** | Single atomic UI controls | Encode full page flows or business logic |
+| **Patterns** | Recurring layouts composed of components | Duplicate component specifications |
+| **Templates** | Complete screen flows and wizards | Redefine components or patterns |
+
+---
+
+## 📂 File Map
 
 | Path | Role |
-| --- | --- |
-| [`design.md`](design.md) | Global rules |
-| [`tokens/`](tokens/tokens.json) | `tokens.json` (source) and `tokens.css` (generated) |
-| [`foundations/`](foundations/color.md) | Color, typography, spacing, accessibility |
-| [`components/`](components/components.md) | Registry + per-component specs |
-| [`patterns/`](patterns/patterns.md) | Registry + per-pattern specs |
+| :--- | :--- |
+| [`AGENTS.md`](AGENTS.md) | **Primary operating instructions for AI coding assistants** |
+| [`docs/integration-guide.md`](docs/integration-guide.md) | **Step-by-step practical guide to consume this repo in apps** |
+| [`design.md`](design.md) | Global rules, design principles, and brand voice |
+| [`tokens/`](tokens/tokens.json) | `tokens.json` (source) and `tokens.css` (generated CSS variables) |
+| [`foundations/`](foundations/color.md) | Color, typography, spacing, and accessibility baselines |
+| [`components/`](components/components.md) | Component registry + per-component contracts and specs |
+| [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) | Blueprint for extracting Figma components into markdown specs |
+| [`patterns/`](patterns/patterns.md) | Registry + layout pattern specs |
 | [`templates/`](templates/templates.md) | Registry + flow templates |
-| [`business-context/`](business-context/product-overview.md) | Product, voice, compliance |
-| [`changelog/corrections-log.md`](changelog/corrections-log.md) | Rolling corrections |
+| [`business-context/`](business-context/product-overview.md) | Product facts, voice guidelines, compliance rules |
+| [`changelog/corrections-log.md`](changelog/corrections-log.md) | Rolling log of corrections and system updates |
 
-## Still to do
+---
 
-- Fill in product name, personas, and core flows in business context.
-- Promote draft components, patterns, and templates as they are reviewed.
-- Keep tokens as the only source of visual values as the system grows.
+## 📋 Backlog & Next Steps
+
+- [ ] Sync Figma styles into [`tokens/tokens.json`](tokens/tokens.json) and generate compiled `tokens.css`.
+- [ ] Extract remaining Figma components using [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md).
+- [ ] Fill in product name, personas, and unit constraints in `business-context/product-overview.md`.
+- [ ] Promote draft components, patterns, and templates as they pass review.
