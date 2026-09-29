@@ -6,7 +6,7 @@ Persistent header for a screen: context, navigation back, and optional secondary
 
 ## Composed of
 
-- [Button](../components/button.component.md) (icon/tertiary for back and overflow)
+- [Button](../components/button.md) (icon/tertiary for back and overflow)
 - Title text (`foundations/typography.md` section or page title)
 
 ## Layout

@@ -6,7 +6,7 @@ Pins the primary (and optional secondary) action to the bottom of a screen so it
 
 ## Composed of
 
-- [Button](../components/button.component.md) — primary required; secondary optional
+- [Button](../components/button.md) — primary required; secondary optional
 
 ## Layout
 

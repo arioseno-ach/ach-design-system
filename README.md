@@ -14,8 +14,8 @@ Both human engineers and AI coding agents (Cursor, Antigravity, Claude Code, Git
 | [`foundations/taste.md`](foundations/taste.md) | ✨ Enterprise design taste, anti-slop dials, and bias corrections |
 | [`.agents/skills/ach-taste/SKILL.md`](.agents/skills/ach-taste/SKILL.md) | ✨ Activatable AI skill version of the taste standard |
 | [`docs/integration-guide.md`](docs/integration-guide.md) | 📦 How to consume this repo in other projects |
-| [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) | 🎨 Figma-to-Markdown component blueprint |
-| [`docs/prd-figma-plugin.md`](docs/prd-figma-plugin.md) | 🔌 PRD for automated Figma token & component exporter |
+| [`components/_template.md`](components/_template.md) | 🎨 Figma-to-Markdown component blueprint |
+| [`docs/archive/prd-figma-plugin.md`](docs/archive/prd-figma-plugin.md) | 🔌 PRD for automated Figma token & component exporter |
 
 ---
 
@@ -62,7 +62,7 @@ flowchart TD
     subgraph Figma["Figma (Upstream Source)"]
         FIG_VAR["Figma Variables\n(Colors, Spacing, Radius)"]
         FIG_COMP["Figma Component Sets\n(Button, Input, Modal...)"]
-        PLUGIN["ach-figma-plugin\n(docs/prd-figma-plugin.md)"]
+        PLUGIN["ach-figma-plugin\n(docs/archive/prd-figma-plugin.md)"]
     end
 
     subgraph Downstream["Downstream Apps (Consumers)"]
@@ -132,12 +132,12 @@ When an agent receives a task like *"Build the e-Faktur batch upload confirmatio
 ```
 1. AGENTS.md           → Read negative rules and decision tree first
 2. ach-taste/SKILL.md  → Declare "ACH Design Read" + set 3 Dials
-3. business-context/onlinepajak.context.md  → Confirm terminology, personas, flows
+3. context/units/onlinepajak.md  → Confirm terminology, personas, flows
 4. templates/wizard.template.md            → Does a template exist for this flow?
 5. patterns/dialog.pattern.md              → Confirmation dialog pattern
-6. components/button.component.md          → Primary action button contract
+6. components/button.md          → Primary action button contract
 7. tokens/tokens.json                      → Resolve all visual values
-8. business-context/brand-voice.md         → Validate every label and CTA
+8. context/brand-voice.md         → Validate every label and CTA
 ```
 
 ---
@@ -208,21 +208,21 @@ Configure `.cursor/rules/ach-design-system.mdc` or `.agents/skills/` in your pro
 | [`foundations/spacing.md`](foundations/spacing.md) | Foundations | Spacing and layout rules |
 | [`foundations/accessibility.md`](foundations/accessibility.md) | Foundations | WCAG baseline requirements |
 | [`foundations/taste.md`](foundations/taste.md) | Foundations | Enterprise design taste and anti-slop directives |
-| [`components/components.md`](components/components.md) | Components | Component registry index |
-| [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md) | Components | Figma-to-Markdown component blueprint |
-| [`components/button.component.md`](components/button.component.md) | Components | Button spec (gold standard reference) |
+| [`components/_index.md`](components/_index.md) | Components | Component registry index |
+| [`components/_template.md`](components/_template.md) | Components | Figma-to-Markdown component blueprint |
+| [`components/button.md`](components/button.md) | Components | Button spec (gold standard reference) |
 | [`patterns/patterns.md`](patterns/patterns.md) | Patterns | Pattern registry index |
 | [`templates/templates.md`](templates/templates.md) | Templates | Template registry index |
-| [`business-context/product-overview.md`](business-context/product-overview.md) | Business | Achilles ecosystem architecture map |
-| [`business-context/brand-voice.md`](business-context/brand-voice.md) | Business | Approved terminology and action verbs |
-| [`business-context/business-unit-rules.md`](business-context/business-unit-rules.md) | Business | Legal compliance guardrails per pilar |
-| [`business-context/onlinepajak.context.md`](business-context/onlinepajak.context.md) | Business | OnlinePajak: personas, flows, copy, compliance |
-| [`business-context/credor.context.md`](business-context/credor.context.md) | Business | Credor: personas, flows, copy, compliance |
-| [`business-context/covia.context.md`](business-context/covia.context.md) | Business | Covia: personas, flows, copy, compliance |
+| [`context/product-overview.md`](context/product-overview.md) | Business | Achilles ecosystem architecture map |
+| [`context/brand-voice.md`](context/brand-voice.md) | Business | Approved terminology and action verbs |
+| [`context/legal-rules.md`](context/legal-rules.md) | Business | Legal compliance guardrails per pilar |
+| [`context/units/onlinepajak.md`](context/units/onlinepajak.md) | Business | OnlinePajak: personas, flows, copy, compliance |
+| [`context/units/credor.md`](context/units/credor.md) | Business | Credor: personas, flows, copy, compliance |
+| [`context/units/covia.md`](context/units/covia.md) | Business | Covia: personas, flows, copy, compliance |
 | [`.agents/skills/ach-taste/SKILL.md`](.agents/skills/ach-taste/SKILL.md) | Agent | Activatable AI skill: enterprise taste, 3 dials, anti-slop |
 | [`docs/integration-guide.md`](docs/integration-guide.md) | Docs | Step-by-step guide to consuming this repo |
-| [`docs/prd-figma-plugin.md`](docs/prd-figma-plugin.md) | Docs | PRD for Figma plugin (auto-export tokens and MD specs) |
-| [`changelog/corrections-log.md`](changelog/corrections-log.md) | Changelog | Rolling log of corrections and updates |
+| [`docs/archive/prd-figma-plugin.md`](docs/archive/prd-figma-plugin.md) | Docs | PRD for Figma plugin (auto-export tokens and MD specs) |
+| [`CHANGELOG.md`](CHANGELOG.md) | Changelog | Rolling log of corrections and updates |
 
 ---
 
@@ -234,6 +234,6 @@ Configure `.cursor/rules/ach-design-system.mdc` or `.agents/skills/` in your pro
 - [x] Create AGENTS.md operating manual for AI coding agents.
 - [x] Write integration guide and Figma plugin PRD.
 - [ ] Sync Figma Variables into [`tokens/tokens.json`](tokens/tokens.json).
-- [ ] Extract all Figma components using [`components/COMPONENT_TEMPLATE.md`](components/COMPONENT_TEMPLATE.md).
-- [ ] Build `ach-figma-plugin` per [`docs/prd-figma-plugin.md`](docs/prd-figma-plugin.md).
+- [ ] Extract all Figma components using [`components/_template.md`](components/_template.md).
+- [ ] Build `ach-figma-plugin` per [`docs/archive/prd-figma-plugin.md`](docs/archive/prd-figma-plugin.md).
 - [ ] Promote draft components, patterns, and templates to `stable` as they pass review.

@@ -15,9 +15,9 @@ Global rules for every screen, component, and piece of copy. Product-specific co
 Default tone is calm, direct, and professional. Prefer short sentences and concrete verbs.
 
 - Do: “Continue”, “Save changes”, “Review your details”.
-- Don’t: “Let’s go!”, “Oops”, slang, or internal jargon unless defined in `business-context/brand-voice.md`.
+- Don’t: “Let’s go!”, “Oops”, slang, or internal jargon unless defined in `context/brand-voice.md`.
 
-Full terminology and do/don’t lists: `business-context/brand-voice.md`.
+Full terminology and do/don’t lists: `context/brand-voice.md`.
 
 ## Visual rules
 
@@ -36,4 +36,4 @@ Full terminology and do/don’t lists: `business-context/brand-voice.md`.
 
 - Do not redefine a component inside a pattern or template. Link to it.
 - If product copy conflicts with brand-voice rules, follow `business-context/` and log the conflict.
-- After a correction from review or production, write it in `changelog/corrections-log.md` and update the matching rule file.
+- After a correction from review or production, write it in `CHANGELOG.md` and update the matching rule file.

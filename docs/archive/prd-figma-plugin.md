@@ -14,7 +14,7 @@
 ### The Problem
 In the **ACH Design System**, the single source of truth for AI agents (Cursor, Antigravity, Claude, Copilot) consists of:
 1. W3C DTCG Token Dictionary ([`tokens/tokens.json`](../tokens/tokens.json))
-2. Structured Markdown Component Specifications with YAML frontmatter & TypeScript contracts ([`components/COMPONENT_TEMPLATE.md`](../components/COMPONENT_TEMPLATE.md))
+2. Structured Markdown Component Specifications with YAML frontmatter & TypeScript contracts ([`components/_template.md`](../components/_template.md))
 
 Currently, designers build components and tokens in **Figma**, but bridging them to this repository requires **manual transcription**:
 - Copying hex codes, padding numbers, and variant names by hand.
@@ -24,7 +24,7 @@ Currently, designers build components and tokens in **Figma**, but bridging them
 ### The Solution
 Build a lightweight **Figma Plugin** that inspects Figma Variables and Component Sets with a single click and automatically generates:
 1. **`tokens.json`**: Formatted according to W3C Design Token Community Group (DTCG).
-2. **`{name}.component.md`**: Formatted exactly according to `components/COMPONENT_TEMPLATE.md` with YAML frontmatter, TypeScript props contract, token mapping, and variant anatomy.
+2. **`{name}.component.md`**: Formatted exactly according to `components/_template.md` with YAML frontmatter, TypeScript props contract, token mapping, and variant anatomy.
 
 ---
 
@@ -232,7 +232,7 @@ sequenceDiagram
 
 ## 8. Acceptance Criteria
 
-- [ ] Selecting any `ComponentSetNode` in Figma outputs markdown that strictly matches [`components/COMPONENT_TEMPLATE.md`](../components/COMPONENT_TEMPLATE.md).
+- [ ] Selecting any `ComponentSetNode` in Figma outputs markdown that strictly matches [`components/_template.md`](../components/_template.md).
 - [ ] Frontmatter contains valid YAML with `id`, `name`, `figma_component_name`, and `tokens_used`.
 - [ ] All Figma Variable bindings (`color/*`, `space/*`, `radius/*`) are correctly translated to `color.*`, `space.*`, and `var(--ach-*)`.
 - [ ] Exported tokens from Figma match the structure of [`tokens/tokens.json`](../tokens/tokens.json).

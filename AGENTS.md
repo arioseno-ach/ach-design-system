@@ -17,7 +17,7 @@ Agents generating frontend code **MUST** adhere strictly to these rules:
 
 2. **Reuse Before Invention**:
    - ❌ **DO NOT** invent new components or layout structures if one exists in `components/`, `patterns/`, or `templates/`.
-   - ✅ **ALWAYS** check `components/components.md` and `patterns/patterns.md` first.
+   - ✅ **ALWAYS** check `components/_index.md` and `patterns/patterns.md` first.
 
 3. **Strict Layering Protocol**:
    - **Tokens** (`tokens/`): Raw design values only. Never put layout or behavior logic here.
@@ -28,7 +28,7 @@ Agents generating frontend code **MUST** adhere strictly to these rules:
    - **Business Context** (`business-context/`): Voice, terminology, legal disclaimers, and unit rules.
 
 4. **Tone & Copy Constraints**:
-   - ✅ **ALWAYS** consult `business-context/brand-voice.md` before writing labels, button text, error messages, or modal titles.
+   - ✅ **ALWAYS** consult `context/brand-voice.md` before writing labels, button text, error messages, or modal titles.
    - ❌ **NEVER** use informal filler ("Oops!", "Awesome!", "Let's do this!"). Keep it calm, direct, and professional.
 
 ---
@@ -50,7 +50,7 @@ flowchart TD
     Patt --> Tokens
     Temp --> Tokens
     
-    Tokens --> Copy[Verify copy against business-context/brand-voice.md]
+    Tokens --> Copy[Verify copy against context/brand-voice.md]
     Copy --> Output[Generate Code Contract & Markup]
 ```
 

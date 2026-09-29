@@ -7,8 +7,8 @@ Interrupts the current task for a decision or short piece of information. Not a 
 ## Composed of
 
 - Title + body text
-- [Button](../components/button.component.md) actions (1–2, rarely 3)
-- Optional [Input](../components/input.component.md) only for short confirmation (e.g. type to confirm)
+- [Button](../components/button.md) actions (1–2, rarely 3)
+- Optional [Input](../components/input.md) only for short confirmation (e.g. type to confirm)
 
 ## Behavior
 

@@ -6,9 +6,9 @@ Linear, multi-step task with a stable step list, one screen per step, and a pinn
 
 - [Top bar](../patterns/top-bar.pattern.md)
 - [Bottom action bar](../patterns/bottom-action-bar.pattern.md)
-- [Stepper](../components/stepper.component.md)
-- [Button](../components/button.component.md)
-- [Input](../components/input.component.md) as needed per step
+- [Stepper](../components/stepper.md)
+- [Button](../components/button.md)
+- [Input](../components/input.md) as needed per step
 - [Dialog](../patterns/dialog.pattern.md) for discard / destructive confirm
 
 ## Structure

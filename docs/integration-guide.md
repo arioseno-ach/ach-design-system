@@ -74,7 +74,7 @@ When writing or modifying UI components, layouts, or styles:
    - Background: `var(--ach-color-neutral-50)`
    - Radius: `var(--ach-radius-md)`
 4. For components (Button, Input, Stepper), follow the contracts in `docs/design-system/components/`.
-5. Check `docs/design-system/business-context/brand-voice.md` for terminology and action verbs.
+5. Check `docs/design-system/context/brand-voice.md` for terminology and action verbs.
 ```
 
 ### 2. Antigravity IDE Setup (`.agents/skills/`)
@@ -171,14 +171,14 @@ sequenceDiagram
 4. Run your token compilation to generate [`tokens/tokens.css`](../tokens/tokens.css).
 
 ### 2. Extracting Components
-1. Copy [`components/COMPONENT_TEMPLATE.md`](../components/COMPONENT_TEMPLATE.md).
+1. Copy [`components/_template.md`](../components/_template.md).
 2. Name the file `components/{component-name}.component.md`.
 3. Fill in:
    - **Frontmatter**: Component ID, name, status, tokens used.
    - **Code Contract**: TypeScript interface (`interface Props`), states, and CSS/Tailwind class mapping.
    - **Figma Specs**: Anatomy, padding, spacing, and icon positions.
    - **Do & Don't**: Concrete code examples of correct vs forbidden usage.
-4. Register the new component in [`components/components.md`](../components/components.md).
+4. Register the new component in [`components/_index.md`](../components/_index.md).
 
 ---
 
@@ -189,5 +189,5 @@ When an engineer or AI agent is tasked with building a new screen:
 1. **Check Template**: Is this screen an Onboarding flow or a Wizard? Look at `templates/wizard.template.md`.
 2. **Check Patterns**: Does it need a Top Bar and Bottom Bar? Look at `patterns/`.
 3. **Assemble Components**: Use verified primitives from `components/`.
-4. **Validate Verbs & Copy**: Consult `business-context/brand-voice.md` (e.g., use "Continue" instead of "Next").
+4. **Validate Verbs & Copy**: Consult `context/brand-voice.md` (e.g., use "Continue" instead of "Next").
 5. **Linting**: Ensure no inline `#hex` colors or unmapped `px` values exist in the generated code.
