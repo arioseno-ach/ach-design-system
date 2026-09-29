@@ -1,61 +1,1374 @@
-/* Generated from tokens.json. Do not edit by hand; regenerate when tokens.json changes. */
+/* ==========================================================
+   ACH Design Tokens — CSS Custom Properties
+   Generated: 2026-09-29T06:39:45.110Z
+   Source: Figma Local Variables
+   ========================================================== */
 
+/* --- Semantic --- */
 :root {
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #f7f7f8;
-  --color-neutral-100: #eeeef0;
-  --color-neutral-200: #d9d9de;
-  --color-neutral-400: #8b8b96;
-  --color-neutral-600: #4a4a55;
-  --color-neutral-800: #1f1f24;
-  --color-neutral-900: #111114;
+  /* text */
+  --semantic-text-ach-color-text-default: var(--primitives-colors-neutral-800);
+  /* text.heading — page titles, card headings, highest contrast text */
+  --semantic-text-ach-color-text-secondary: var(--primitives-colors-neutral-600);
+  /* text.secondary — column headers, helper copy, timestamps, subtitles */
 
-  --color-brand-100: #e8eef8;
-  --color-brand-500: #1f4ea3;
-  --color-brand-600: #173b7c;
+  /* bg */
+  --semantic-bg-ach-color-bg-surface: var(--primitives-colors-neutral-0);
+  /* Primary surface — cards, modals, panels, table containers */
+  --semantic-bg-ach-color-bg-surface-hover: var(--primitives-colors-neutral-150);
+  /* Surface hover — table header hover, interactive row highlight */
+  --semantic-bg-ach-color-bg-surface-active: var(--primitives-colors-neutral-200);
+  /* Surface active — pressed state, active selection background */
 
-  --color-feedback-success: #1b7a4e;
-  --color-feedback-warning: #b36b00;
-  --color-feedback-danger: #b42318;
+  /* text */
+  --semantic-text-ach-color-text-subtle: var(--primitives-colors-neutral-500);
+  /* text.placeholder — input placeholder, must not be mistaken for real content */
+  --semantic-text-ach-color-text-disabled: var(--primitives-colors-neutral-350);
+  /* text.disabled — text inside disabled controls */
+  --semantic-text-ach-color-text-inverse: var(--primitives-colors-neutral-0);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
 
-  --space-0: 0px;
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
+  /* bg */
+  --semantic-bg-ach-color-bg-canvas: var(--primitives-colors-neutral-50);
+  /* Page canvas — outermost background, base layer everything sits on */
+  --semantic-bg-ach-color-bg-inverse: var(--primitives-colors-neutral-900);
+  /* Inverse — primary dark fill for buttons, badges, alerts, dark panels */
 
-  --font-family-sans: Inter, system-ui, sans-serif;
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 20px;
-  --font-size-xl: 24px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
+  /* border */
+  --semantic-border-ach-color-border-default: var(--primitives-colors-neutral-250);
+  /* border.default — card outlines, input strokes, table outer edge */
+  --semantic-border-ach-color-border-subtle: var(--primitives-colors-neutral-150);
+  /* border.subtle — table row separators, section breaks, hairline dividers */
+  --semantic-border-ach-color-border-strong: var(--primitives-colors-neutral-350);
+  /* border.strong — selected state, active input, focused element */
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
+  /* fg */
+  --semantic-fg-ach-color-fg-default: var(--primitives-colors-neutral-800);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-ach-color-fg-muted: var(--primitives-colors-neutral-700);
+  /* bg.subtle — table header rows, alternating stripes, input backgrounds */
+  --semantic-fg-ach-color-fg-subtle: var(--primitives-colors-neutral-500);
+  /* bg.muted — disabled inputs, skeleton loaders, code blocks */
+  --semantic-fg-ach-color-fg-disabled: var(--primitives-colors-neutral-350);
+  /* bg.surface.raised — dropdowns, tooltips, popovers that float above bg.surface */
+  --semantic-fg-ach-color-fg-inverse: var(--primitives-colors-neutral-0);
+  /* bg.overlay — dark sidebar, nav drawer, modal backdrop */
+
+  /* bg */
+  --semantic-bg-ach-color-bg-surface-secondary: var(--primitives-colors-neutral-100);
+  /* Secondary surface — sidebar panels, alternating sections, secondary content areas */
+
+  /* fg */
+  --semantic-fg-success-ach-color-fg-success: var(--primitives-colors-green-600);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-success-ach-color-fg-success-subtle: var(--primitives-colors-green-500);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-success-ach-color-fg-success-muted: var(--primitives-colors-green-400);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-warning-ach-color-fg-warning: var(--primitives-colors-orange-700);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-warning-ach-color-fg-warning-subtle: var(--primitives-colors-orange-600);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-warning-ach-color-fg-warning-muted: var(--primitives-colors-orange-500);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-info-ach-color-fg-info: var(--primitives-colors-blue-600);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-info-ach-color-fg-info-subtle: var(--primitives-colors-blue-500);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-info-ach-color-fg-info-muted: var(--primitives-colors-blue-400);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-error-ach-color-fg-error: var(--primitives-colors-red-600);
+  /* bg.surface — cards, modals, panels, table containers */
+  --semantic-fg-error-ach-color-fg-error-subtle: var(--primitives-colors-red-500);
+  /* bg.surface — cards, modals, panels, table containers */
+
+  /* bg */
+  --semantic-bg-success-ach-color-bg-success-surface: var(--primitives-colors-green-100);
+  /* Success surface — badge background, alert container fill */
+  --semantic-bg-warning-ach-color-bg-warning-surface: var(--primitives-colors-orange-100);
+  /* Warning surface — badge background, alert container fill */
+  --semantic-bg-info-ach-color-bg-info-surface: var(--primitives-colors-blue-100);
+  /* Info surface — badge background, alert container fill */
+  --semantic-bg-error-ach-color-bg-error-surface: var(--primitives-colors-red-100);
+  /* Error surface — badge background, alert container fill */
+
+  /* text */
+  --semantic-text-ach-color-text-link: var(--primitives-colors-blue-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-ach-color-text-hover: var(--primitives-colors-blue-800);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-success-ach-color-text-success: var(--primitives-colors-green-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-success-ach-color-text-success-subtle: var(--primitives-colors-green-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-warning-ach-color-text-warning: var(--primitives-colors-orange-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-warning-ach-color-text-warning-subtle: var(--primitives-colors-orange-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-info-ach-color-text-info: var(--primitives-colors-blue-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-info-ach-color-text-info-subtle: var(--primitives-colors-blue-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-error-ach-color-text-error: var(--primitives-colors-red-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-error-ach-color-text-error-subtle: var(--primitives-colors-red-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-text-ach-color-text-placeholder: var(--primitives-colors-neutral-400);
+  /* text.placeholder — input placeholder, must not be mistaken for real content */
+
+  /* border */
+  --semantic-border-ach-color-border-disabled: var(--primitives-colors-neutral-200);
+  /* border.default — card outlines, input strokes, table outer edge */
+  --semantic-border-ach-color-border-inverse: var(--primitives-colors-neutral-700);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-success-ach-color-border-success: var(--primitives-colors-green-300);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-success-ach-color-border-success-strong: var(--primitives-colors-green-500);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-warning-ach-color-border-warning: var(--primitives-colors-orange-300);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-warning-ach-color-border-warning-strong: var(--primitives-colors-orange-500);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-info-ach-color-border-info: var(--primitives-colors-blue-300);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-info-ach-color-border-info-strong: var(--primitives-colors-blue-500);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-error-ach-color-border-error: var(--primitives-colors-red-300);
+  /* border.strong — selected state, active input, focused element */
+  --semantic-border-error-ach-color-border-error-strong: var(--primitives-colors-red-500);
+  /* border.strong — selected state, active input, focused element */
+
+  /* icon */
+  --semantic-icon-ach-color-icon-default: var(--primitives-colors-neutral-800);
+  /* text.heading — page titles, card headings, highest contrast text */
+  --semantic-icon-ach-color-icon-secondary: var(--primitives-colors-neutral-600);
+  /* text.secondary — column headers, helper copy, timestamps, subtitles */
+  --semantic-icon-ach-color-icon-subtle: var(--primitives-colors-neutral-500);
+  /* text.placeholder — input placeholder, must not be mistaken for real content */
+  --semantic-icon-ach-color-icon-placeholder: var(--primitives-colors-neutral-400);
+  /* text.placeholder — input placeholder, must not be mistaken for real content */
+  --semantic-icon-ach-color-icon-disabled: var(--primitives-colors-neutral-350);
+  /* text.disabled — text inside disabled controls */
+  --semantic-icon-ach-color-icon-inverse: var(--primitives-colors-neutral-0);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-ach-color-icon-link: var(--primitives-colors-blue-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-ach-color-icon-hover: var(--primitives-colors-blue-800);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-success-ach-color-icon-success: var(--primitives-colors-green-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-success-ach-color-icon-success-subtle: var(--primitives-colors-green-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-warning-ach-color-icon-warning: var(--primitives-colors-orange-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-warning-ach-color-icon-warning-subtle: var(--primitives-colors-orange-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-info-ach-color-icon-info: var(--primitives-colors-blue-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-info-ach-color-icon-info-subtle: var(--primitives-colors-blue-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-error-ach-color-icon-error: var(--primitives-colors-red-700);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+  --semantic-icon-error-ach-color-icon-error-subtle: var(--primitives-colors-red-600);
+  /* text.inverse — text on dark/overlay surfaces like sidebars and dark cards */
+
+  /* brand */
+  --semantic-brand-ach-color-brand-default: var(--primitives-colors-blue-500);
+  /* Brand default — primary brand color for logos, key accents, CTAs */
+  --semantic-brand-ach-color-brand-subtle: var(--primitives-colors-blue-50);
+  /* Brand subtle — soft brand color, brand-tinted surfaces */
+  --semantic-brand-ach-color-brand-muted: var(--primitives-colors-blue-100);
+  /* Brand muted — mid-tone brand color, secondary brand accents */
+  --semantic-brand-ach-color-brand-strong: var(--primitives-colors-blue-600);
+  /* Brand strong — darker brand color, emphasized brand headings */
+  --semantic-brand-ach-color-brand-stronger: var(--primitives-colors-blue-700);
+  /* Brand stronger — darkest brand color, highest emphasis brand text */
+  --semantic-brand-ach-color-brand-secondary: var(--primitives-colors-blue-300);
+  /* Brand secondary — lighter brand tone, supporting brand elements */
+
+  /* fg */
+  --semantic-fg-error-ach-color-fg-error-muted: var(--primitives-colors-red-400);
 }
 
-@theme {
-  --color-neutral-0: var(--color-neutral-0);
-  --color-brand-500: var(--color-brand-500);
-  --font-sans: var(--font-family-sans);
-  --spacing-4: var(--space-4);
-  --spacing-8: var(--space-8);
-  --spacing-12: var(--space-12);
-  --spacing-16: var(--space-16);
-  --spacing-24: var(--space-24);
-  --spacing-32: var(--space-32);
-  --spacing-48: var(--space-48);
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
+/* --- Component --- */
+:root {
+  /* card */
+  --component-card-border-radius: var(--primitives-border-radius-sm);
+  --component-card-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-card-padding: var(--primitives-padding-4);
+
+  /* button */
+  --component-button-secondary-background: var(--semantic-bg-ach-color-bg-surface);
+  /* Ghost/outline button fill → brand.50 */
+  --component-button-secondary-border: var(--semantic-border-ach-color-border-inverse);
+  /* Outline button border → brand.500 */
+  --component-button-secondary-text: var(--semantic-text-ach-color-text-default);
+  /* Outline button label → brand.600 */
+  --component-button-primary-background: var(--semantic-bg-ach-color-bg-inverse);
+  /* Neutral button fill → neutral.100 */
+  --component-button-primary-border: var(--semantic-border-ach-color-border-default);
+  /* Neutral button border → neutral.200 */
+  --component-button-primary-text: var(--semantic-text-ach-color-text-inverse);
+  /* Neutral button label → neutral.700 */
+
+  /* badge */
+  --component-badge-success-background: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-badge-success-border: var(--semantic-border-success-ach-color-border-success);
+  --component-badge-success-text: var(--semantic-text-success-ach-color-text-success);
+  --component-badge-success-icon: var(--semantic-icon-success-ach-color-icon-success-subtle);
+  --component-badge-warning-background: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-badge-warning-border: var(--semantic-border-warning-ach-color-border-warning);
+  --component-badge-warning-text: var(--semantic-text-warning-ach-color-text-warning);
+  --component-badge-warning-icon: var(--semantic-icon-warning-ach-color-icon-warning);
+  --component-badge-info-background: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-badge-info-border: var(--semantic-border-info-ach-color-border-info);
+  --component-badge-info-text: var(--semantic-text-info-ach-color-text-info);
+  --component-badge-info-icon: var(--semantic-icon-info-ach-color-icon-info-subtle);
+  --component-badge-error-background: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-badge-error-border: var(--semantic-border-error-ach-color-border-error);
+  --component-badge-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-badge-error-icon: var(--semantic-icon-error-ach-color-icon-error-subtle);
+  --component-badge-brand-background: var(--semantic-brand-ach-color-brand-default);
+  --component-badge-brand-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-neutral-background: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-badge-neutral-border: var(--semantic-border-ach-color-border-default);
+  --component-badge-neutral-text: var(--semantic-text-ach-color-text-default);
+
+  /* input */
+  --component-input-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-input-border: var(--semantic-border-ach-color-border-default);
+  --component-input-border-focus: var(--semantic-brand-ach-color-brand-default);
+  --component-input-border-error: var(--semantic-border-error-ach-color-border-error);
+  --component-input-text: var(--semantic-text-ach-color-text-default);
+  --component-input-placeholder: var(--semantic-text-ach-color-text-placeholder);
+  --component-input-label-text: var(--semantic-text-ach-color-text-subtle);
+  --component-input-helper-text: var(--semantic-text-ach-color-text-secondary);
+  --component-input-error-text: var(--semantic-text-error-ach-color-text-error);
+
+  /* table */
+  --component-table-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-table-header-background: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-table-header-text: var(--semantic-text-ach-color-text-secondary);
+  --component-table-row-text: var(--semantic-text-ach-color-text-default);
+  --component-table-cell-stripe: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-table-cell-selected: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-table-border: var(--semantic-border-ach-color-border-default);
+  --component-table-cell-divider: var(--semantic-border-ach-color-border-subtle);
+
+  /* card */
+  --component-card-border: var(--semantic-border-ach-color-border-default);
+
+  /* table */
+  --component-table-header-background-hover: var(--semantic-bg-ach-color-bg-surface-active);
+
+  /* button */
+  --component-button-primary-background-hover: var(--semantic-border-ach-color-border-inverse);
+  /* Neutral button fill → neutral.100 */
+  --component-button-primary-background-active: var(--semantic-border-ach-color-border-inverse);
+  /* Neutral button fill → neutral.100 */
+  --component-button-primary-background-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  /* Neutral button fill → neutral.100 */
+  --component-button-secondary-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  /* Ghost/outline button fill → brand.50 */
+  --component-button-secondary-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  /* Outline button border → brand.500 */
+  --component-button-secondary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  /* Outline button label → brand.600 */
+  --component-button-text-text: var(--semantic-text-ach-color-text-link);
+  /* Outline button label → brand.600 */
+  --component-button-text-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  /* Outline button label → brand.600 */
+  --component-button-text-text-hover: var(--semantic-text-ach-color-text-hover);
+  /* Outline button label → brand.600 */
+  --component-button-solid-secondary-bg: var(--semantic-fg-ach-color-fg-subtle);
+  --component-button-solid-secondary-bg-hover: var(--semantic-fg-ach-color-fg-muted);
+  --component-button-solid-secondary-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-secondary-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-solid-secondary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-solid-success-bg: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-solid-success-bg-hover: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-solid-success-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-success-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-solid-success-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-solid-warning-bg: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-button-solid-warning-bg-hover: var(--semantic-fg-warning-ach-color-fg-warning-subtle);
+  --component-button-solid-warning-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-warning-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-solid-warning-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-solid-error-bg: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-solid-error-bg-hover: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-solid-error-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-error-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-solid-error-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-solid-brand-bg: var(--semantic-brand-ach-color-brand-default);
+  --component-button-solid-brand-bg-hover: var(--semantic-brand-ach-color-brand-strong);
+  --component-button-solid-brand-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-brand-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-solid-brand-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-primary-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-primary-bg-hover: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-button-outlined-primary-border: var(--semantic-border-ach-color-border-default);
+  --component-button-outlined-primary-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-primary-text: var(--semantic-text-ach-color-text-default);
+  --component-button-outlined-primary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-secondary-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-secondary-bg-hover: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-button-outlined-secondary-border: var(--semantic-border-ach-color-border-strong);
+  --component-button-outlined-secondary-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-secondary-text: var(--semantic-text-ach-color-text-subtle);
+  --component-button-outlined-secondary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-success-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-success-bg-hover: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-button-outlined-success-border: var(--semantic-border-success-ach-color-border-success);
+  --component-button-outlined-success-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-success-text: var(--semantic-text-success-ach-color-text-success);
+  --component-button-outlined-success-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-warning-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-warning-bg-hover: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-button-outlined-warning-border: var(--semantic-border-warning-ach-color-border-warning-strong);
+  --component-button-outlined-warning-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-warning-text: var(--semantic-text-warning-ach-color-text-warning);
+  --component-button-outlined-warning-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-error-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-error-bg-hover: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-button-outlined-error-border: var(--semantic-border-error-ach-color-border-error-strong);
+  --component-button-outlined-error-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-error-text: var(--semantic-text-error-ach-color-text-error-subtle);
+  --component-button-outlined-error-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-brand-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-brand-bg-hover: var(--semantic-brand-ach-color-brand-subtle);
+  --component-button-outlined-brand-border: var(--semantic-brand-ach-color-brand-default);
+  --component-button-outlined-brand-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-brand-text: var(--semantic-text-info-ach-color-text-info);
+  --component-button-outlined-brand-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-primary-text: var(--semantic-text-ach-color-text-default);
+  --component-button-link-primary-text-hover: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-primary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-secondary-text: var(--semantic-text-ach-color-text-subtle);
+  --component-button-link-secondary-text-hover: var(--semantic-text-ach-color-text-secondary);
+  --component-button-link-secondary-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-success-text: var(--semantic-text-success-ach-color-text-success-subtle);
+  --component-button-link-success-text-hover: var(--semantic-text-success-ach-color-text-success);
+  --component-button-link-success-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-warning-text: var(--semantic-text-warning-ach-color-text-warning-subtle);
+  --component-button-link-warning-text-hover: var(--semantic-text-warning-ach-color-text-warning);
+  --component-button-link-warning-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-button-link-error-text-hover: var(--semantic-text-error-ach-color-text-error-subtle);
+  --component-button-link-error-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-brand-text: var(--semantic-text-info-ach-color-text-info);
+  --component-button-link-brand-text-hover: var(--semantic-text-ach-color-text-hover);
+  --component-button-link-brand-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-icon-primary-bg: var(--semantic-bg-ach-color-bg-inverse);
+  --component-button-icon-primary-bg-hover: var(--semantic-border-ach-color-border-inverse);
+  --component-button-icon-primary-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-primary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-primary-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-icon-secondary-bg: var(--semantic-fg-ach-color-fg-subtle);
+  --component-button-icon-secondary-bg-hover: var(--semantic-fg-ach-color-fg-muted);
+  --component-button-icon-secondary-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-secondary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-secondary-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-icon-success-bg: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-icon-success-bg-hover: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-icon-success-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-success-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-success-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-icon-warning-bg: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-button-icon-warning-bg-hover: var(--semantic-fg-warning-ach-color-fg-warning-subtle);
+  --component-button-icon-warning-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-warning-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-warning-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-icon-error-bg: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-icon-error-bg-hover: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-icon-error-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-error-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-error-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-icon-brand-bg: var(--semantic-brand-ach-color-brand-default);
+  --component-button-icon-brand-bg-hover: var(--semantic-brand-ach-color-brand-strong);
+  --component-button-icon-brand-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-brand-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-icon-brand-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-primary-bg: var(--semantic-bg-ach-color-bg-inverse);
+  --component-button-fab-primary-bg-hover: var(--semantic-border-ach-color-border-inverse);
+  --component-button-fab-primary-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-primary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-primary-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-secondary-bg: var(--semantic-fg-ach-color-fg-subtle);
+  --component-button-fab-secondary-bg-hover: var(--semantic-fg-ach-color-fg-muted);
+  --component-button-fab-secondary-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-secondary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-secondary-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-success-bg: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-fab-success-bg-hover: var(--semantic-fg-success-ach-color-fg-success);
+  --component-button-fab-success-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-success-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-success-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-warning-bg: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-button-fab-warning-bg-hover: var(--semantic-fg-warning-ach-color-fg-warning-subtle);
+  --component-button-fab-warning-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-warning-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-warning-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-error-bg: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-fab-error-bg-hover: var(--semantic-fg-error-ach-color-fg-error);
+  --component-button-fab-error-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-error-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-error-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-brand-bg: var(--semantic-brand-ach-color-brand-default);
+  --component-button-fab-brand-bg-hover: var(--semantic-brand-ach-color-brand-strong);
+  --component-button-fab-brand-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-brand-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-button-fab-brand-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+
+  /* accordion */
+  --component-accordion-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-accordion-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-accordion-border: var(--semantic-border-ach-color-border-default);
+  --component-accordion-title: var(--semantic-text-ach-color-text-default);
+  --component-accordion-title-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-accordion-content: var(--semantic-text-ach-color-text-secondary);
+  --component-accordion-content-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-accordion-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-accordion-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+
+  /* button */
+  --component-button-solid-neutral-bg: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-neutral-bg-hover: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-neutral-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-solid-neutral-text: var(--semantic-text-ach-color-text-default);
+  --component-button-solid-neutral-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-neutral-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-neutral-bg-hover: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-button-outlined-neutral-border: var(--semantic-border-ach-color-border-strong);
+  --component-button-outlined-neutral-border-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-button-outlined-neutral-text: var(--semantic-text-ach-color-text-default);
+  --component-button-outlined-neutral-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-link-neutral-text: var(--semantic-text-ach-color-text-subtle);
+  --component-button-link-neutral-text-hover: var(--semantic-text-ach-color-text-secondary);
+  --component-button-link-neutral-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-icon-neutral-bg: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-neutral-bg-hover: var(--semantic-fg-ach-color-fg-disabled);
+  --component-button-icon-neutral-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-icon-neutral-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-button-icon-neutral-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-fab-neutral-bg: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-neutral-bg-hover: var(--semantic-fg-ach-color-fg-disabled);
+  --component-button-fab-neutral-bg-disabled: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-button-fab-neutral-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-button-fab-neutral-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-button-solid-inverse-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-solid-inverse-bg-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-button-solid-inverse-bg-disabled: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-solid-inverse-text: var(--semantic-text-ach-color-text-default);
+  --component-button-solid-inverse-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-button-outlined-inverse-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-inverse-bg-hover: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-outlined-inverse-border: var(--semantic-border-ach-color-border-inverse);
+  --component-button-outlined-inverse-border-disabled: var(--semantic-border-ach-color-border-strong);
+  --component-button-outlined-inverse-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-outlined-inverse-text-disabled: var(--semantic-text-ach-color-text-placeholder);
+  --component-button-link-inverse-text: var(--semantic-text-ach-color-text-inverse);
+  --component-button-link-inverse-text-hover: var(--semantic-text-ach-color-text-default);
+  --component-button-link-inverse-text-disabled: var(--semantic-text-ach-color-text-placeholder);
+  --component-button-icon-inverse-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-icon-inverse-bg-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-button-icon-inverse-bg-disabled: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-icon-inverse-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-button-icon-inverse-icon-disabled: var(--semantic-icon-ach-color-icon-placeholder);
+  --component-button-fab-inverse-bg: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-fab-inverse-bg-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-button-fab-inverse-bg-disabled: var(--semantic-bg-ach-color-bg-surface);
+  --component-button-fab-inverse-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-button-fab-inverse-icon-disabled: var(--semantic-icon-ach-color-icon-placeholder);
+
+  /* badge */
+  --component-badge-solid-primary-background: var(--semantic-bg-ach-color-bg-inverse);
+  --component-badge-solid-primary-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-solid-secondary-background: var(--semantic-fg-ach-color-fg-subtle);
+  --component-badge-solid-secondary-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-solid-info-background: var(--semantic-brand-ach-color-brand-default);
+  --component-badge-solid-info-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-solid-warning-background: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-badge-solid-warning-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-solid-error-background: var(--semantic-fg-error-ach-color-fg-error);
+  --component-badge-solid-error-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-solid-success-background: var(--semantic-fg-success-ach-color-fg-success);
+  --component-badge-solid-success-text: var(--semantic-text-ach-color-text-inverse);
+  --component-badge-brand-border: var(--semantic-border-ach-color-border-inverse);
+  --component-badge-brand-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-badge-neutral-icon: var(--semantic-icon-ach-color-icon-subtle);
+  --component-badge-soft-primary-background: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-badge-soft-primary-text: var(--semantic-text-ach-color-text-default);
+  --component-badge-soft-primary-border: var(--semantic-border-ach-color-border-strong);
+
+  /* alert */
+  --component-alert-neutral-background: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-alert-neutral-border: var(--semantic-border-ach-color-border-disabled);
+  --component-alert-neutral-icon: var(--semantic-icon-ach-color-icon-subtle);
+  --component-alert-neutral-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-neutral-text: var(--semantic-text-ach-color-text-secondary);
+  --component-alert-success-background: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-alert-success-border: var(--semantic-border-success-ach-color-border-success);
+  --component-alert-success-icon: var(--semantic-icon-success-ach-color-icon-success-subtle);
+  --component-alert-success-title: var(--semantic-text-success-ach-color-text-success);
+  --component-alert-success-text: var(--semantic-text-success-ach-color-text-success);
+  --component-alert-info-background: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-alert-info-border: var(--semantic-border-info-ach-color-border-info);
+  --component-alert-info-icon: var(--semantic-icon-info-ach-color-icon-info-subtle);
+  --component-alert-info-title: var(--semantic-text-info-ach-color-text-info);
+  --component-alert-info-text: var(--semantic-text-info-ach-color-text-info);
+  --component-alert-warning-background: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-alert-warning-border: var(--semantic-border-warning-ach-color-border-warning);
+  --component-alert-warning-icon: var(--semantic-icon-warning-ach-color-icon-warning-subtle);
+  --component-alert-warning-title: var(--semantic-text-warning-ach-color-text-warning);
+  --component-alert-warning-text: var(--semantic-text-warning-ach-color-text-warning);
+  --component-alert-error-background: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-alert-error-border: var(--semantic-border-error-ach-color-border-error);
+  --component-alert-error-icon: var(--semantic-icon-error-ach-color-icon-error-subtle);
+  --component-alert-error-title: var(--semantic-text-error-ach-color-text-error);
+  --component-alert-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-alert-neutral-solid-background: var(--semantic-bg-ach-color-bg-inverse);
+  --component-alert-neutral-solid-border: var(--semantic-border-ach-color-border-default);
+  --component-alert-neutral-solid-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-alert-neutral-solid-title: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-neutral-solid-text: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-success-solid-background: var(--semantic-fg-success-ach-color-fg-success);
+  --component-alert-success-solid-border: var(--semantic-border-success-ach-color-border-success-strong);
+  --component-alert-success-solid-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-alert-success-solid-title: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-success-solid-text: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-info-solid-background: var(--semantic-fg-info-ach-color-fg-info);
+  --component-alert-info-solid-border: var(--semantic-border-info-ach-color-border-info-strong);
+  --component-alert-info-solid-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-alert-info-solid-title: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-info-solid-text: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-warning-solid-background: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-alert-warning-solid-border: var(--semantic-border-warning-ach-color-border-warning-strong);
+  --component-alert-warning-solid-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-alert-warning-solid-title: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-warning-solid-text: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-error-solid-background: var(--semantic-fg-error-ach-color-fg-error);
+  --component-alert-error-solid-border: var(--semantic-border-error-ach-color-border-error-strong);
+  --component-alert-error-solid-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-alert-error-solid-title: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-error-solid-text: var(--semantic-text-ach-color-text-inverse);
+  --component-alert-neutral-white-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-alert-neutral-white-border: var(--semantic-border-ach-color-border-default);
+  --component-alert-neutral-white-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-alert-neutral-white-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-neutral-white-text: var(--semantic-text-ach-color-text-secondary);
+  --component-alert-success-white-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-alert-success-white-border: var(--semantic-border-success-ach-color-border-success);
+  --component-alert-success-white-icon: var(--semantic-icon-success-ach-color-icon-success);
+  --component-alert-success-white-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-success-white-text: var(--semantic-text-ach-color-text-secondary);
+  --component-alert-info-white-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-alert-info-white-border: var(--semantic-border-info-ach-color-border-info);
+  --component-alert-info-white-icon: var(--semantic-icon-info-ach-color-icon-info);
+  --component-alert-info-white-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-info-white-text: var(--semantic-text-ach-color-text-secondary);
+  --component-alert-warning-white-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-alert-warning-white-border: var(--semantic-border-warning-ach-color-border-warning);
+  --component-alert-warning-white-icon: var(--semantic-icon-warning-ach-color-icon-warning);
+  --component-alert-warning-white-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-warning-white-text: var(--semantic-text-ach-color-text-secondary);
+  --component-alert-error-white-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-alert-error-white-border: var(--semantic-border-error-ach-color-border-error);
+  --component-alert-error-white-icon: var(--semantic-icon-error-ach-color-icon-error);
+  --component-alert-error-white-title: var(--semantic-text-ach-color-text-default);
+  --component-alert-error-white-text: var(--semantic-text-ach-color-text-secondary);
+
+  /* datepicker */
+  --component-datepicker-calendar-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-datepicker-calendar-border: var(--semantic-border-ach-color-border-default);
+  --component-datepicker-day-text: var(--semantic-text-ach-color-text-default);
+  --component-datepicker-day-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-datepicker-day-bg-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-datepicker-day-bg-selected: var(--semantic-brand-ach-color-brand-default);
+  --component-datepicker-day-text-selected: var(--semantic-text-ach-color-text-inverse);
+  --component-datepicker-day-bg-today: var(--semantic-brand-ach-color-brand-subtle);
+  --component-datepicker-day-text-today: var(--semantic-text-info-ach-color-text-info);
+  --component-datepicker-header-text: var(--semantic-text-ach-color-text-default);
+  --component-datepicker-header-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-datepicker-header-icon-hover: var(--semantic-icon-ach-color-icon-hover);
+  --component-datepicker-header-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-datepicker-weekday-text: var(--semantic-text-ach-color-text-subtle);
+
+  /* spinner */
+  --component-spinner-primary-track: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-spinner-primary-indicator: var(--semantic-icon-ach-color-icon-default);
+  --component-spinner-neutral-track: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-spinner-neutral-indicator: var(--semantic-icon-ach-color-icon-subtle);
+  --component-spinner-brand-track: var(--semantic-brand-ach-color-brand-muted);
+  --component-spinner-brand-indicator: var(--semantic-icon-info-ach-color-icon-info-subtle);
+  --component-spinner-success-track: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-spinner-success-indicator: var(--semantic-icon-success-ach-color-icon-success-subtle);
+  --component-spinner-warning-track: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-spinner-warning-indicator: var(--semantic-icon-warning-ach-color-icon-warning);
+  --component-spinner-error-track: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-spinner-error-indicator: var(--semantic-icon-error-ach-color-icon-error-subtle);
+  --component-spinner-info-track: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-spinner-info-indicator: var(--semantic-icon-info-ach-color-icon-info-subtle);
+
+  /* badge */
+  --component-badge-soft-primary-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-badge-solid-primary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-badge-solid-secondary-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-badge-solid-info-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-badge-solid-warning-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-badge-solid-error-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-badge-solid-success-icon: var(--semantic-icon-ach-color-icon-inverse);
+
+  /* spinner */
+  --component-spinner-inverse-track: var(--semantic-icon-ach-color-icon-placeholder);
+  --component-spinner-inverse-indicator: var(--semantic-icon-ach-color-icon-inverse);
+
+  /* input */
+  --component-input-label-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-input-helper-text-disabled: var(--semantic-text-ach-color-text-disabled);
+
+  /* checkbox */
+  --component-checkbox-default-text: var(--semantic-text-ach-color-text-default);
+  --component-checkbox-disabled-text: var(--semantic-text-ach-color-text-disabled);
+
+  /* file-input */
+  --component-file-input-label-text: var(--semantic-text-ach-color-text-default);
+  --component-file-input-label-required: var(--semantic-text-error-ach-color-text-error);
+  --component-file-input-helper-text: var(--semantic-text-ach-color-text-subtle);
+  --component-file-input-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-file-input-placeholder-text: var(--semantic-text-ach-color-text-secondary);
+  --component-file-input-filename-text: var(--semantic-text-ach-color-text-default);
+  --component-file-input-disabled-text: var(--semantic-text-ach-color-text-disabled);
+  --component-file-input-icon-default: var(--semantic-icon-ach-color-icon-default);
+  --component-file-input-icon-success: var(--semantic-fg-success-ach-color-fg-success);
+  --component-file-input-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-file-input-field-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-file-input-field-border: var(--semantic-border-ach-color-border-default);
+  --component-file-input-field-border-error: var(--semantic-border-error-ach-color-border-error);
+  --component-file-input-field-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+
+  /* file-input-image */
+  --component-file-input-image-label-text: var(--semantic-text-ach-color-text-default);
+  --component-file-input-image-label-required: var(--semantic-text-error-ach-color-text-error);
+  --component-file-input-image-description-text: var(--semantic-text-ach-color-text-default);
+  --component-file-input-image-helper-text: var(--semantic-text-ach-color-text-subtle);
+  --component-file-input-image-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-file-input-image-disabled-text: var(--semantic-text-ach-color-text-disabled);
+  --component-file-input-image-field-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-file-input-image-field-border: var(--semantic-border-ach-color-border-default);
+  --component-file-input-image-field-border-error: var(--semantic-border-error-ach-color-border-error);
+  --component-file-input-image-field-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-file-input-image-placeholder-background: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-file-input-image-placeholder-icon: var(--semantic-icon-ach-color-icon-subtle);
+  --component-file-input-image-placeholder-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+
+  /* image */
+  --component-image-placeholder-background: var(--semantic-bg-ach-color-bg-canvas);
+  --component-image-placeholder-icon: var(--semantic-icon-ach-color-icon-placeholder);
+  --component-image-placeholder-border: var(--semantic-border-ach-color-border-subtle);
+
+  /* avatar */
+  --component-avatar-initials-background: var(--semantic-bg-ach-color-bg-inverse);
+  /* Background fill for text/initials avatar variants */
+  --component-avatar-initials-text: var(--semantic-text-ach-color-text-inverse);
+  /* Text color for initials (e.g. "CN") in avatar */
+  --component-avatar-slot-background: var(--semantic-bg-ach-color-bg-surface-hover);
+  /* Placeholder background for avatar slot property */
+  --component-avatar-logo-background: var(--semantic-brand-ach-color-brand-default);
+  /* Background fill for branded logo avatar variants */
+  --component-avatar-logo-icon: var(--semantic-fg-ach-color-fg-inverse);
+  /* Icon/logo foreground color in avatar */
+
+  /* treeview */
+  --component-treeview-item-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-treeview-item-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-treeview-item-background-selected: var(--semantic-brand-ach-color-brand-subtle);
+  --component-treeview-item-text: var(--semantic-text-ach-color-text-default);
+  --component-treeview-item-text-selected: var(--semantic-brand-ach-color-brand-strong);
+  --component-treeview-item-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-treeview-item-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-treeview-item-icon-hover: var(--semantic-icon-ach-color-icon-default);
+  --component-treeview-item-icon-selected: var(--semantic-brand-ach-color-brand-strong);
+  --component-treeview-item-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-treeview-treenavigation-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-treeview-item-connector: var(--semantic-border-ach-color-border-subtle);
+  --component-treeview-item-text-child: var(--semantic-text-ach-color-text-secondary);
+
+  /* textarea */
+  --component-textarea-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-textarea-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-textarea-border: var(--semantic-border-ach-color-border-default);
+  --component-textarea-border-focus: var(--semantic-brand-ach-color-brand-default);
+  --component-textarea-border-error: var(--semantic-border-error-ach-color-border-error);
+  --component-textarea-border-disabled: var(--semantic-border-ach-color-border-default);
+  --component-textarea-text: var(--semantic-text-ach-color-text-default);
+  --component-textarea-placeholder: var(--semantic-text-ach-color-text-placeholder);
+  --component-textarea-label: var(--semantic-text-ach-color-text-subtle);
+  --component-textarea-supporting-text: var(--semantic-text-ach-color-text-secondary);
+  --component-textarea-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-textarea-text-disabled: var(--semantic-text-ach-color-text-disabled);
+
+  /* select */
+  --component-select-field-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-select-field-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-select-field-border: var(--semantic-border-ach-color-border-default);
+  --component-select-field-border-focus: var(--semantic-brand-ach-color-brand-default);
+  --component-select-field-border-error: var(--semantic-border-error-ach-color-border-error);
+  --component-select-field-border-disabled: var(--semantic-border-ach-color-border-default);
+  --component-select-field-text: var(--semantic-text-ach-color-text-default);
+  --component-select-field-placeholder: var(--semantic-text-ach-color-text-placeholder);
+  --component-select-field-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-select-field-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-select-field-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-select-label-text: var(--semantic-text-ach-color-text-subtle);
+  --component-select-label-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-select-helper-text: var(--semantic-text-ach-color-text-secondary);
+  --component-select-helper-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-select-helper-text-error: var(--semantic-text-error-ach-color-text-error);
+  --component-select-menu-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-select-menu-border: var(--semantic-border-ach-color-border-subtle);
+  --component-select-menu-item-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-select-menu-item-background-selected: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-select-menu-item-text: var(--semantic-text-ach-color-text-default);
+  --component-select-menu-item-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-select-menu-item-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-select-menu-item-icon-selected: var(--semantic-brand-ach-color-brand-default);
+  --component-select-menu-item-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+
+  /* search-input */
+  --component-search-input-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-search-input-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-search-input-border: var(--semantic-border-ach-color-border-default);
+  --component-search-input-border-focus: var(--semantic-brand-ach-color-brand-default);
+  --component-search-input-border-disabled: var(--semantic-border-ach-color-border-default);
+  --component-search-input-text: var(--semantic-text-ach-color-text-default);
+  --component-search-input-placeholder: var(--semantic-text-ach-color-text-placeholder);
+  --component-search-input-text-disabled: var(--semantic-text-ach-color-text-disabled);
+  --component-search-input-icon: var(--semantic-icon-ach-color-icon-secondary);
+  --component-search-input-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+  --component-search-input-filter-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-search-input-divider: var(--semantic-border-ach-color-border-subtle);
+
+  /* datepicker */
+  --component-datepicker-field-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+
+  /* input-group */
+  --component-input-group-default-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-input-group-default-border: var(--semantic-border-ach-color-border-default);
+  --component-input-group-focus-border: var(--semantic-brand-ach-color-brand-default);
+  --component-input-group-error-border: var(--semantic-border-error-ach-color-border-error);
+  --component-input-group-disabled-background: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-input-group-disabled-border: var(--semantic-border-ach-color-border-disabled);
+  --component-input-group-default-text: var(--semantic-text-ach-color-text-default);
+  --component-input-group-default-placeholder: var(--semantic-text-ach-color-text-placeholder);
+  --component-input-group-default-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-input-group-disabled-text: var(--semantic-text-ach-color-text-disabled);
+  --component-input-group-disabled-icon: var(--semantic-icon-ach-color-icon-disabled);
+  --component-input-group-error-text: var(--semantic-text-error-ach-color-text-error);
+
+  /* input */
+  --component-input-field-background-disabled: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-input-field-text-disabled: var(--semantic-text-ach-color-text-disabled);
+
+  /* divider */
+  --component-divider-default: var(--semantic-border-ach-color-border-default);
+  --component-divider-subtle: var(--semantic-border-ach-color-border-subtle);
+  --component-divider-disabled: var(--semantic-border-ach-color-border-disabled);
+  --component-divider-inverse: var(--semantic-border-ach-color-border-inverse);
+  --component-divider-strong: var(--semantic-border-ach-color-border-strong);
+
+  /* badge */
+  --component-badge-outline-primary-background: var(--semantic-bg-ach-color-bg-surface);
+
+  /* banner */
+  --component-banner-default-background: var(--semantic-bg-ach-color-bg-canvas);
+  --component-banner-default-border: var(--semantic-border-ach-color-border-default);
+  --component-banner-default-text: var(--semantic-text-ach-color-text-default);
+  --component-banner-default-icon: var(--semantic-text-ach-color-text-default);
+  --component-banner-default-icon-wrapper-bg: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-banner-default-close-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-banner-success-background: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-banner-success-border: var(--semantic-border-ach-color-border-default);
+  --component-banner-success-text: var(--semantic-text-success-ach-color-text-success);
+  --component-banner-success-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-banner-success-icon-wrapper-bg: var(--semantic-fg-success-ach-color-fg-success);
+  --component-banner-success-close-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-banner-warning-background: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-banner-warning-border: var(--semantic-border-ach-color-border-default);
+  --component-banner-warning-text: var(--semantic-text-warning-ach-color-text-warning);
+  --component-banner-warning-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-banner-warning-icon-wrapper-bg: var(--semantic-fg-warning-ach-color-fg-warning);
+  --component-banner-warning-close-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-banner-info-background: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-banner-info-border: var(--semantic-border-ach-color-border-default);
+  --component-banner-info-text: var(--semantic-text-info-ach-color-text-info);
+  --component-banner-info-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-banner-info-icon-wrapper-bg: var(--semantic-fg-info-ach-color-fg-info);
+  --component-banner-info-close-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-banner-error-background: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-banner-error-border: var(--semantic-border-ach-color-border-default);
+  --component-banner-error-text: var(--semantic-text-error-ach-color-text-error);
+  --component-banner-error-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-banner-error-icon-wrapper-bg: var(--semantic-fg-error-ach-color-fg-error);
+  --component-banner-error-close-icon: var(--semantic-icon-ach-color-icon-default);
+
+  /* breadcrumb */
+  --component-breadcrumb-text-default: var(--semantic-text-ach-color-text-subtle);
+  --component-breadcrumb-text-active: var(--semantic-text-ach-color-text-default);
+  --component-breadcrumb-icon: var(--semantic-icon-ach-color-icon-subtle);
+  --component-breadcrumb-more-icon: var(--semantic-fg-ach-color-fg-default);
+
+  /* checkbox */
+  --component-checkbox-default-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-checkbox-default-border: var(--semantic-border-ach-color-border-strong);
+  --component-checkbox-default-checked: var(--semantic-fg-ach-color-fg-default);
+  --component-checkbox-disabled-background: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-checkbox-disabled-checked: var(--semantic-fg-ach-color-fg-disabled);
+  --component-checkbox-error-border: var(--semantic-border-error-ach-color-border-error-strong);
+  --component-checkbox-error-checked: var(--semantic-fg-error-ach-color-fg-error-subtle);
+  --component-checkbox-icon: var(--semantic-fg-ach-color-fg-inverse);
+  --component-checkbox-error-indeterminate: var(--semantic-fg-error-ach-color-fg-error-subtle);
+
+  /* contextual-menu */
+  --component-contextual-menu-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-contextual-menu-border: var(--semantic-border-ach-color-border-default);
+  --component-contextual-menu-item-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-contextual-menu-item-background-active: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-contextual-menu-item-text: var(--semantic-text-ach-color-text-default);
+  --component-contextual-menu-item-text-secondary: var(--semantic-text-ach-color-text-secondary);
+  --component-contextual-menu-item-icon: var(--semantic-fg-ach-color-fg-subtle);
+  --component-contextual-menu-group-label-text: var(--semantic-text-ach-color-text-subtle);
+
+  /* table */
+  --component-table-cell-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-table-cell-active: var(--semantic-bg-ach-color-bg-surface-active);
+
+  /* drawer */
+  --component-drawer-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-drawer-border: var(--semantic-border-ach-color-border-default);
+  --component-drawer-title-text: var(--semantic-text-ach-color-text-default);
+  --component-drawer-icon: var(--semantic-icon-ach-color-icon-default);
+
+  /* dialog */
+  --component-dialog-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-dialog-border: var(--semantic-border-ach-color-border-default);
+  --component-dialog-title-text: var(--semantic-text-ach-color-text-default);
+  --component-dialog-icon: var(--semantic-icon-ach-color-icon-default);
+
+  /* list */
+  --component-list-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-list-item-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-list-item-primary-text: var(--semantic-text-ach-color-text-default);
+  --component-list-item-secondary-text: var(--semantic-text-ach-color-text-secondary);
+
+  /* progress-bar */
+  --component-progress-bar-track: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-progress-bar-fill: var(--semantic-brand-ach-color-brand-default);
+  --component-progress-bar-label: var(--semantic-text-ach-color-text-subtle);
+  --component-progress-bar-circular-label: var(--semantic-fg-ach-color-fg-muted);
+
+  /* snackbar */
+  --component-snackbar-neutral-background: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-snackbar-warning-background: var(--semantic-bg-warning-ach-color-bg-warning-surface);
+  --component-snackbar-info-background: var(--semantic-bg-info-ach-color-bg-info-surface);
+  --component-snackbar-error-background: var(--semantic-bg-error-ach-color-bg-error-surface);
+  --component-snackbar-success-background: var(--semantic-bg-success-ach-color-bg-success-surface);
+  --component-snackbar-neutral-icon-bg: var(--semantic-fg-ach-color-fg-subtle);
+  --component-snackbar-warning-icon-bg: var(--semantic-fg-warning-ach-color-fg-warning-muted);
+  --component-snackbar-info-icon-bg: var(--semantic-fg-info-ach-color-fg-info-muted);
+  --component-snackbar-error-icon-bg: var(--semantic-fg-error-ach-color-fg-error-muted);
+  --component-snackbar-success-icon-bg: var(--semantic-fg-success-ach-color-fg-success);
+  --component-snackbar-icon: var(--semantic-icon-ach-color-icon-inverse);
+  --component-snackbar-title-text: var(--semantic-text-ach-color-text-default);
+  --component-snackbar-description-text: var(--semantic-text-ach-color-text-secondary);
+  --component-snackbar-close-icon: var(--semantic-icon-ach-color-icon-subtle);
+
+  /* radio */
+  --component-radio-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-radio-default-border: var(--semantic-border-ach-color-border-default);
+  --component-radio-error-border: var(--semantic-fg-error-ach-color-fg-error);
+  --component-radio-disabled-border: var(--semantic-border-ach-color-border-disabled);
+  --component-radio-default-dot: var(--semantic-fg-ach-color-fg-default);
+  --component-radio-error-dot: var(--semantic-fg-error-ach-color-fg-error);
+  --component-radio-disabled-dot: var(--semantic-icon-ach-color-icon-disabled);
+  --component-radio-default-text: var(--semantic-text-ach-color-text-default);
+  --component-radio-disabled-text: var(--semantic-text-ach-color-text-disabled);
+
+  /* tabs */
+  --component-tabs-segmented-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-tabs-segmented-item-background-active: var(--semantic-bg-ach-color-bg-surface);
+  --component-tabs-segmented-item-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-tabs-segmented-item-text: var(--semantic-text-ach-color-text-default);
+  --component-tabs-segmented-item-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-tabs-line-border: var(--semantic-border-ach-color-border-subtle);
+  --component-tabs-line-item-text-active: var(--semantic-text-ach-color-text-default);
+  --component-tabs-line-item-text-inactive: var(--semantic-text-ach-color-text-secondary);
+  --component-tabs-line-item-indicator: var(--semantic-bg-ach-color-bg-inverse);
+  --component-tabs-line-item-indicator-hover: var(--semantic-border-ach-color-border-subtle);
+  --component-tabs-segmented-item-text-inactive: var(--semantic-text-ach-color-text-secondary);
+  --component-tabs-counter-background: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-tabs-counter-text: var(--semantic-text-ach-color-text-default);
+
+  /* tooltip */
+  --component-tooltip-default-background: var(--semantic-fg-ach-color-fg-default);
+  --component-tooltip-default-text: var(--semantic-text-ach-color-text-inverse);
+  --component-tooltip-default-arrow: var(--semantic-fg-ach-color-fg-default);
+  --component-tooltip-inverse-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-tooltip-inverse-text: var(--semantic-fg-ach-color-fg-default);
+  --component-tooltip-inverse-arrow: var(--semantic-bg-ach-color-bg-surface);
+
+  /* topbar */
+  --component-topbar-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-topbar-text: var(--semantic-text-ach-color-text-default);
+  --component-topbar-icon: var(--semantic-icon-ach-color-icon-default);
+
+  /* sidebar */
+  --component-sidebar-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-sidebar-border: var(--semantic-border-ach-color-border-default);
+  --component-sidebar-item-text: var(--semantic-text-ach-color-text-default);
+  --component-sidebar-item-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-sidebar-item-background-hover: var(--semantic-bg-ach-color-bg-surface-hover);
+  --component-sidebar-item-background-active: var(--semantic-bg-ach-color-bg-surface-active);
+  --component-sidebar-item-tint: var(--semantic-fg-ach-color-fg-default);
+  --component-sidebar-group-label-text: var(--semantic-text-ach-color-text-subtle);
+  --component-sidebar-profile-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-sidebar-profile-border: var(--semantic-border-ach-color-border-default);
+  --component-sidebar-profile-text: var(--semantic-text-ach-color-text-default);
+  --component-sidebar-profile-text-secondary: var(--semantic-text-ach-color-text-secondary);
+  --component-sidebar-profile-icon: var(--semantic-fg-ach-color-fg-subtle);
+
+  /* slider */
+  --component-slider-track-background: var(--primitives-colors-neutral-150);
+  --component-slider-track-fill: var(--semantic-fg-ach-color-fg-default);
+  --component-slider-marker-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-slider-marker-background-focus: var(--semantic-bg-ach-color-bg-canvas);
+  --component-slider-marker-border: var(--semantic-border-ach-color-border-inverse);
+  --component-slider-marker-border-focus: var(--semantic-border-ach-color-border-strong);
+
+  /* stats */
+  --component-stats-item-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-stats-item-background-hover: var(--semantic-bg-ach-color-bg-surface-secondary);
+  --component-stats-item-number: var(--semantic-text-ach-color-text-default);
+  --component-stats-item-subtitle: var(--semantic-text-ach-color-text-subtle);
+  --component-stats-border: var(--semantic-border-ach-color-border-default);
+  --component-stats-item-title: var(--semantic-text-ach-color-text-secondary);
+
+  /* switch */
+  --component-switch-background-unchecked: var(--semantic-icon-ach-color-icon-disabled);
+  --component-switch-background-checked: var(--semantic-icon-ach-color-icon-default);
+  --component-switch-toggle-default: var(--semantic-text-ach-color-text-inverse);
+  --component-switch-label-label: var(--semantic-text-ach-color-text-default);
+  --component-switch-label-subtitle: var(--semantic-text-ach-color-text-secondary);
+
+  /* timeline */
+  --component-timeline-line: var(--semantic-border-ach-color-border-default);
+  --component-timeline-text-secondary: var(--semantic-text-ach-color-text-secondary);
+  --component-timeline-text-tertiary: var(--semantic-text-ach-color-text-subtle);
+  --component-timeline-default-icon: var(--semantic-border-ach-color-border-default);
+  --component-timeline-default-title: var(--semantic-text-ach-color-text-default);
+  --component-timeline-active-icon: var(--semantic-brand-ach-color-brand-default);
+  --component-timeline-active-title: var(--semantic-text-ach-color-text-default);
+  --component-timeline-success-icon: var(--semantic-fg-success-ach-color-fg-success);
+  --component-timeline-success-title: var(--semantic-text-success-ach-color-text-success);
+  --component-timeline-error-icon: var(--semantic-fg-error-ach-color-fg-error);
+  --component-timeline-error-title: var(--semantic-fg-error-ach-color-fg-error);
+  --component-timeline-warning-icon: var(--semantic-fg-warning-ach-color-fg-warning);
+  --component-timeline-warning-title: var(--semantic-text-warning-ach-color-text-warning);
+  --component-timeline-info-icon: var(--semantic-fg-info-ach-color-fg-info);
+  --component-timeline-info-title: var(--semantic-fg-info-ach-color-fg-info);
+  --component-timeline-disabled-icon: var(--semantic-fg-ach-color-fg-disabled);
+  --component-timeline-disabled-title: var(--semantic-text-ach-color-text-disabled);
+  --component-timeline-disabled-text-secondary: var(--semantic-text-ach-color-text-disabled);
+  --component-timeline-disabled-text-tertiary: var(--semantic-text-ach-color-text-disabled);
+
+  /* datepicker */
+  --component-datepicker-field-icon: var(--semantic-icon-ach-color-icon-secondary);
+
+  /* textarea */
+  --component-textarea-resizable: var(--semantic-border-ach-color-border-default);
+
+  /* input-group */
+  --component-input-group-label-text: var(--semantic-text-ach-color-text-secondary);
+  --component-input-group-label-text-disabled: var(--semantic-text-ach-color-text-disabled);
+
+  /* pagination */
+  --component-pagination-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-pagination-border: var(--semantic-border-ach-color-border-subtle);
+  --component-pagination-dropdown-background: var(--semantic-bg-ach-color-bg-surface);
+  --component-pagination-dropdown-border: var(--semantic-border-ach-color-border-default);
+  --component-pagination-dropdown-text: var(--semantic-text-ach-color-text-default);
+  --component-pagination-dropdown-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-pagination-label-text: var(--semantic-text-ach-color-text-secondary);
+  --component-pagination-nav-icon: var(--semantic-icon-ach-color-icon-default);
+  --component-pagination-nav-icon-disabled: var(--semantic-icon-ach-color-icon-disabled);
+
+  /* sidebar */
+  --component-sidebar-item-secondary: var(--semantic-text-ach-color-text-secondary);
+
+  /* tabs */
+  --component-tabs-segmented-secondary: var(--semantic-bg-ach-color-bg-surface-secondary);
+}
+
+/* --- Primitives --- */
+:root {
+  /* dimension */
+  --primitives-dimension-2xl: 32;
+  --primitives-dimension-xl: 24;
+  --primitives-dimension-lg: 16;
+  --primitives-dimension-md: 12;
+  --primitives-dimension-sm: 8;
+  --primitives-dimension-xs: 4;
+  --primitives-dimension-xxs: 2;
+
+  /* borderRadius */
+  --primitives-border-radius-infinite: 9999px;
+  --primitives-border-radius-xl: 24px;
+  --primitives-border-radius-lg: 16px;
+  --primitives-border-radius-md: 12px;
+  --primitives-border-radius-sm: 8px;
+  --primitives-border-radius-xs: 4px;
+
+  /* opacity */
+  --primitives-opacity-high: 90;
+  --primitives-opacity-mid: 50;
+  --primitives-opacity-low: 10;
+
+  /* fontSizes */
+  --primitives-font-sizes-5xl: 48px;
+  --primitives-font-sizes-4xl: 36px;
+  --primitives-font-sizes-3xl: 28px;
+  --primitives-font-sizes-2xl: 22px;
+  --primitives-font-sizes-xl: 20px;
+  --primitives-font-sizes-lg: 18px;
+  --primitives-font-sizes-md: 16px;
+  --primitives-font-sizes-sm: 14px;
+  --primitives-font-sizes-xs: 12px;
+  --primitives-font-sizes-2xs: 10px;
+
+  /* colors */
+  --primitives-colors-neutral-1000: #000000;
+  --primitives-colors-neutral-0: #ffffff;
+  --primitives-colors-neutral-50: #fafafa;
+  --primitives-colors-neutral-75: #f8f8f8;
+  --primitives-colors-neutral-100: #f5f5f5;
+  --primitives-colors-neutral-150: #eeeeee;
+  --primitives-colors-neutral-200: #e5e5e5;
+  --primitives-colors-neutral-250: #dcdcdc;
+  --primitives-colors-neutral-300: #d4d4d4;
+  --primitives-colors-neutral-350: #bdbdbd;
+  --primitives-colors-neutral-400: #a3a3a3;
+  --primitives-colors-neutral-450: #8a8a8a;
+  --primitives-colors-neutral-500: #737373;
+  --primitives-colors-neutral-600: #525252;
+  --primitives-colors-neutral-650: #484848;
+  --primitives-colors-neutral-700: #404040;
+  --primitives-colors-neutral-750: #333333;
+  --primitives-colors-neutral-800: #262626;
+  --primitives-colors-neutral-850: #1f1f1f;
+  --primitives-colors-neutral-900: #171717;
+  --primitives-colors-neutral-950: #0a0a0a;
+  --primitives-colors-red-50: #fff5f5;
+  --primitives-colors-red-75: #ffecec;
+  --primitives-colors-red-100: #ffe0e0;
+  --primitives-colors-red-150: #ffd0d0;
+  --primitives-colors-red-200: #ffc1c1;
+  --primitives-colors-red-250: #ffa0a0;
+  --primitives-colors-red-300: #ff8080;
+  --primitives-colors-red-350: #ff6060;
+  --primitives-colors-red-400: #ff4040;
+  --primitives-colors-red-450: #f01a1a;
+  --primitives-colors-red-500: #e00000;
+  /* Core brand — primary CTA background */
+  --primitives-colors-red-600: #c00000;
+  --primitives-colors-red-650: #a80000;
+  --primitives-colors-red-700: #a00000;
+  --primitives-colors-red-750: #900000;
+  --primitives-colors-red-800: #800000;
+  --primitives-colors-red-850: #700000;
+  --primitives-colors-red-900: #600000;
+  --primitives-colors-red-950: #3d0000;
+  --primitives-colors-blue-50: #f2f7ff;
+  --primitives-colors-blue-75: #e8f0ff;
+  --primitives-colors-blue-100: #d9e7ff;
+  --primitives-colors-blue-150: #bdd3ff;
+  --primitives-colors-blue-200: #a3c0ff;
+  --primitives-colors-blue-250: #88acff;
+  --primitives-colors-blue-300: #6d99ff;
+  --primitives-colors-blue-350: #5487ff;
+  --primitives-colors-blue-400: #3b74ff;
+  --primitives-colors-blue-450: #2065ff;
+  --primitives-colors-blue-500: #005cff;
+  --primitives-colors-blue-600: #004fe8;
+  --primitives-colors-blue-650: #0046cc;
+  --primitives-colors-blue-700: #003eb8;
+  --primitives-colors-blue-750: #00359c;
+  --primitives-colors-blue-800: #002d85;
+  --primitives-colors-blue-850: #00256e;
+  --primitives-colors-blue-900: #001740;
+  --primitives-colors-blue-950: #000912;
+  --primitives-colors-green-50: #f0fdf4;
+  --primitives-colors-green-75: #e8fbf0;
+  --primitives-colors-green-100: #dcfce7;
+  --primitives-colors-green-150: #cafbd8;
+  --primitives-colors-green-200: #bbf7d0;
+  --primitives-colors-green-250: #a0f0bc;
+  --primitives-colors-green-300: #86efac;
+  --primitives-colors-green-350: #65e896;
+  --primitives-colors-green-400: #4ade80;
+  --primitives-colors-green-450: #33d36d;
+  --primitives-colors-green-500: #22c55e;
+  --primitives-colors-green-600: #16a34a;
+  --primitives-colors-green-650: #159143;
+  --primitives-colors-green-700: #15803d;
+  --primitives-colors-green-750: #166038;
+  --primitives-colors-green-800: #166534;
+  --primitives-colors-green-850: #155c2e;
+  --primitives-colors-green-900: #14532d;
+  --primitives-colors-green-950: #052e16;
+  --primitives-colors-orange-50: #fffbeb;
+  --primitives-colors-orange-75: #fff8dc;
+  --primitives-colors-orange-100: #fef3c7;
+  --primitives-colors-orange-150: #fdeea8;
+  --primitives-colors-orange-200: #fde68a;
+  --primitives-colors-orange-250: #fcdb6a;
+  --primitives-colors-orange-300: #fcd34d;
+  --primitives-colors-orange-350: #fcc838;
+  --primitives-colors-orange-400: #fbbf24;
+  --primitives-colors-orange-450: #f8af16;
+  --primitives-colors-orange-500: #f59e0b;
+  --primitives-colors-orange-600: #d97706;
+  --primitives-colors-orange-650: #c26507;
+  --primitives-colors-orange-700: #b45309;
+  --primitives-colors-orange-750: #a04a0b;
+  --primitives-colors-orange-800: #92400e;
+  --primitives-colors-orange-850: #843b0f;
+  --primitives-colors-orange-900: #78350f;
+  --primitives-colors-orange-950: #451a03;
+  --primitives-colors-purple-50: #faf5ff;
+  --primitives-colors-purple-75: #f3e8ff;
+  --primitives-colors-purple-100: #e9d5ff;
+  --primitives-colors-purple-150: #e0c4ff;
+  --primitives-colors-purple-200: #d8b4fe;
+  --primitives-colors-purple-250: #c98bfd;
+  --primitives-colors-purple-300: #c084fc;
+  --primitives-colors-purple-350: #b060fa;
+  --primitives-colors-purple-400: #a855f7;
+  --primitives-colors-purple-450: #9e3ff2;
+  --primitives-colors-purple-500: #9333ea;
+  --primitives-colors-purple-600: #7e22ce;
+  --primitives-colors-purple-650: #7220b8;
+  --primitives-colors-purple-700: #6b21a8;
+  --primitives-colors-purple-750: #5e1d94;
+  --primitives-colors-purple-800: #581c87;
+  --primitives-colors-purple-850: #4c1875;
+  --primitives-colors-purple-900: #3e1263;
+  --primitives-colors-purple-950: #3b0764;
+  --primitives-colors-teal-50: #f0fdfa;
+  --primitives-colors-teal-75: #e6fbf7;
+  --primitives-colors-teal-100: #ccfbf1;
+  --primitives-colors-teal-150: #b0f5e7;
+  --primitives-colors-teal-200: #99f6e4;
+  --primitives-colors-teal-250: #72edda;
+  --primitives-colors-teal-300: #5eead4;
+  --primitives-colors-teal-350: #40dfc4;
+  --primitives-colors-teal-400: #2dd4bf;
+  --primitives-colors-teal-450: #20c5b0;
+  --primitives-colors-teal-500: #14b8a6;
+  --primitives-colors-teal-600: #0f766e;
+  --primitives-colors-teal-650: #0d6a62;
+  --primitives-colors-teal-700: #0d6059;
+  --primitives-colors-teal-750: #0b5249;
+  --primitives-colors-teal-800: #115e59;
+  --primitives-colors-teal-850: #0c4b47;
+  --primitives-colors-teal-900: #134e4a;
+  --primitives-colors-teal-950: #042f2e;
+  --primitives-colors-magenta-50: #fdf4ff;
+  --primitives-colors-magenta-75: #faeaff;
+  --primitives-colors-magenta-100: #f5d0fe;
+  --primitives-colors-magenta-150: #f2bdfe;
+  --primitives-colors-magenta-200: #f0abfc;
+  --primitives-colors-magenta-250: #ec84fa;
+  --primitives-colors-magenta-300: #e879f9;
+  --primitives-colors-magenta-350: #e458f4;
+  --primitives-colors-magenta-400: #e040f0;
+  --primitives-colors-magenta-450: #dc2aed;
+  --primitives-colors-magenta-500: #d946ef;
+  --primitives-colors-magenta-600: #a21caf;
+  --primitives-colors-magenta-650: #96199f;
+  --primitives-colors-magenta-700: #86198f;
+  --primitives-colors-magenta-750: #72177a;
+  --primitives-colors-magenta-800: #701a75;
+  --primitives-colors-magenta-850: #5e1661;
+  --primitives-colors-magenta-900: #5b1260;
+  --primitives-colors-magenta-950: #4a044e;
+  --primitives-colors-lime-50: #f7fee7;
+  --primitives-colors-lime-75: #eefcc4;
+  --primitives-colors-lime-100: #ecfccb;
+  --primitives-colors-lime-150: #d9faa0;
+  --primitives-colors-lime-200: #d9f99d;
+  --primitives-colors-lime-250: #c5f564;
+  --primitives-colors-lime-300: #bef264;
+  --primitives-colors-lime-350: #a8e630;
+  --primitives-colors-lime-400: #a3e635;
+  --primitives-colors-lime-450: #88cc18;
+  --primitives-colors-lime-500: #84cc16;
+  --primitives-colors-lime-600: #65a30d;
+  --primitives-colors-lime-650: #578f0f;
+  --primitives-colors-lime-700: #4d7c0f;
+  --primitives-colors-lime-750: #43700f;
+  --primitives-colors-lime-800: #3f6212;
+  --primitives-colors-lime-850: #335610;
+  --primitives-colors-lime-900: #365314;
+  --primitives-colors-lime-950: #1a2e05;
+  --primitives-colors-grass-50: #f1fff1;
+  --primitives-colors-grass-75: #e7fee7;
+  --primitives-colors-grass-100: #d5fcd5;
+  --primitives-colors-grass-150: #b8f8b8;
+  --primitives-colors-grass-200: #9af39a;
+  --primitives-colors-grass-250: #7cef7c;
+  --primitives-colors-grass-300: #5ee95e;
+  --primitives-colors-grass-350: #43e443;
+  --primitives-colors-grass-400: #22e022;
+  --primitives-colors-grass-450: #10de10;
+  --primitives-colors-grass-500: #00dd00;
+  --primitives-colors-grass-600: #00b000;
+  --primitives-colors-grass-650: #009d00;
+  --primitives-colors-grass-700: #008700;
+  --primitives-colors-grass-750: #007100;
+  --primitives-colors-grass-800: #005c00;
+  --primitives-colors-grass-850: #004700;
+  --primitives-colors-grass-900: #003300;
+  --primitives-colors-grass-950: #001f00;
+
+  /* fontFamilies */
+  --primitives-font-families-display: "Lexend";
+  --primitives-font-families-body: "Lexend";
+
+  /* fontWeights */
+  --primitives-font-weights-display-regular: "Regular";
+  --primitives-font-weights-display-medium: "Medium";
+  --primitives-font-weights-display-bold: "Bold";
+  --primitives-font-weights-body-regular: "Regular";
+  --primitives-font-weights-body-medium: "Medium";
+  --primitives-font-weights-body-bold: "Bold";
+
+  /* letterSpacing */
+  --primitives-letter-spacing-2xl: 0.0729999989271164px;
+  --primitives-letter-spacing-xl: 0.019999999552965164px;
+  --primitives-letter-spacing-lg: 0.009999999776482582px;
+  --primitives-letter-spacing-md: 0px;
+  --primitives-letter-spacing-sm: -0.009999999776482582px;
+  --primitives-letter-spacing-xs: -0.019999999552965164px;
+
+  /* shadows */
+  --primitives-shadows-xs-color: rgba(0, 0, 0, 0.05);
+  --primitives-shadows-xs-x: 0;
+  --primitives-shadows-xs-y: 1;
+  --primitives-shadows-xs-blur: 2;
+  --primitives-shadows-xs-spread: 0;
+  --primitives-shadows-sm-color: rgba(0, 0, 0, 0.1);
+  --primitives-shadows-sm-shadow-1-x: 0;
+  --primitives-shadows-sm-shadow-1-y: 1;
+  --primitives-shadows-sm-shadow-1-blur: 3;
+  --primitives-shadows-sm-shadow-1-spread: 0;
+  --primitives-shadows-sm-shadow-2-x: 0;
+  --primitives-shadows-sm-shadow-2-y: 1;
+  --primitives-shadows-sm-shadow-2-blur: 2;
+  --primitives-shadows-sm-shadow-2-spread: -1;
+  --primitives-shadows-md-color: rgba(0, 0, 0, 0.1);
+  --primitives-shadows-md-shadow-1-x: 0;
+  --primitives-shadows-md-shadow-1-y: 4;
+  --primitives-shadows-md-shadow-1-blur: 6;
+  --primitives-shadows-md-shadow-1-spread: -1;
+  --primitives-shadows-md-shadow-2-x: 0;
+  --primitives-shadows-md-shadow-2-y: 2;
+  --primitives-shadows-md-shadow-2-blur: 4;
+  --primitives-shadows-md-shadow-2-spread: -2;
+
+  /* dimension */
+  --primitives-dimension-3xl: 64;
+  --primitives-boolean: 1;
+
+  /* colors */
+  --primitives-colors-red-550: #dc2626;
+
+  /* borderWidth */
+  --primitives-border-width-default: 1px;
+
+  /* padding */
+  --primitives-padding-1: 4px;
+  --primitives-padding-2: 8px;
+  --primitives-padding-3: 12px;
+  --primitives-padding-4: 16px;
+  --primitives-padding-5: 20px;
+  --primitives-padding-6: 24px;
+  --primitives-padding-8: 32px;
+  --primitives-padding-10: 40px;
+  --primitives-padding-12: 48px;
+  --primitives-padding-14: 56px;
+  --primitives-padding-16: 64px;
+  --primitives-padding-18: 72px;
+  --primitives-padding-20: 80px;
+
+  /* borderWidth */
+  --primitives-border-width-0: 0px;
+  --primitives-border-width-2: 2px;
+  --primitives-border-width-4: 4px;
+  --primitives-border-width-8: 8px;
+
+  /* padding */
+  --primitives-padding-7: 28px;
+  --primitives-padding-9: 36px;
+  --primitives-padding-11: 44px;
+  --primitives-padding-13: 52px;
+  --primitives-padding-15: 60px;
+  --primitives-padding-17: 68px;
+  --primitives-padding-19: 76px;
+
+  /* shadows */
+  --primitives-shadows-lg-color: rgba(0, 0, 0, 0.1);
+  --primitives-shadows-lg-shadow-1-x: 0;
+  --primitives-shadows-lg-shadow-1-y: 10;
+  --primitives-shadows-lg-shadow-1-blur: 15;
+  --primitives-shadows-lg-shadow-1-spread: -3;
+  --primitives-shadows-lg-shadow-2-x: 0;
+  --primitives-shadows-lg-shadow-2-y: 4;
+  --primitives-shadows-lg-shadow-2-blur: 6;
+  --primitives-shadows-lg-shadow-2-spread: -4;
+  --primitives-shadows-xl-color: rgba(0, 0, 0, 0.1);
+  --primitives-shadows-xl-shadow-1-x: 0;
+  --primitives-shadows-xl-shadow-1-y: 20;
+  --primitives-shadows-xl-shadow-1-blur: 25;
+  --primitives-shadows-xl-shadow-1-spread: -5;
+  --primitives-shadows-xl-shadow-2-x: 0;
+  --primitives-shadows-xl-shadow-2-y: 8;
+  --primitives-shadows-xl-shadow-2-blur: 10;
+  --primitives-shadows-xl-shadow-2-spread: -6;
+  --primitives-shadows-2xl-color: rgba(0, 0, 0, 0.25);
+  --primitives-shadows-2xl-x: 0;
+  --primitives-shadows-2xl-y: 25;
+  --primitives-shadows-2xl-blur: 50;
+  --primitives-shadows-2xl-spread: -12;
+
+  /* lineHeights */
+  --primitives-line-heights-5xl: 58px;
+  --primitives-line-heights-4xl: 44px;
+  --primitives-line-heights-3xl: 40px;
+  --primitives-line-heights-2xl: 32px;
+  --primitives-line-heights-xl: 28px;
+  --primitives-line-heights-lg: 26px;
+  --primitives-line-heights-md: 22px;
+  --primitives-line-heights-sm: 20px;
+  --primitives-line-heights-xs: 18px;
+  --primitives-line-heights-2xs: 16px;
+  --primitives-line-heights-3xs: 14px;
+  --primitives-line-heights-4xs: 12px;
+
+  /* letterSpacing */
+  --primitives-letter-spacing-tight: -1px;
+  --primitives-letter-spacing-wide: 0.15000000596046448px;
+  --primitives-letter-spacing-wider: 0.5px;
+
+  /* paragraphSpacing */
+  --primitives-paragraph-spacing-none: 0px;
 }
