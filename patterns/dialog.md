@@ -1,3 +1,7 @@
+---
+kind: pattern
+---
+
 # Dialog
 
 ## Purpose
@@ -8,7 +12,7 @@ Interrupts the current task for a decision or short piece of information. Not a 
 
 - Title + body text
 - [Button](../components/button.md) actions (1–2, rarely 3)
-- Optional [Input](../components/input.md) only for short confirmation (e.g. type to confirm)
+- Optional [Input field](../components/input-field.md) only for short confirmation (e.g. type to confirm)
 
 ## Behavior
 

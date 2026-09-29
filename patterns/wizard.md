@@ -1,15 +1,19 @@
+---
+kind: template
+---
+
 # Wizard
 
 Linear, multi-step task with a stable step list, one screen per step, and a pinned forward action.
 
 ## Uses
 
-- [Top bar](../patterns/top-bar.pattern.md)
-- [Bottom action bar](../patterns/bottom-action-bar.pattern.md)
-- [Stepper](../components/stepper.md)
+- [Top bar](./top-bar.md)
+- [Bottom action bar](./bottom-action-bar.md)
+- Stepper
 - [Button](../components/button.md)
-- [Input](../components/input.md) as needed per step
-- [Dialog](../patterns/dialog.pattern.md) for discard / destructive confirm
+- [Input field](../components/input-field.md) as needed per step
+- [Dialog](./dialog.md) for discard / destructive confirm
 
 ## Structure
 

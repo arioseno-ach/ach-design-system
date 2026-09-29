@@ -1,14 +1,18 @@
+---
+kind: template
+---
+
 # Onboarding flow
 
 First-run path that collects the minimum needed to use the product, then lands the user in the main app.
 
 ## Uses
 
-- [Wizard](./wizard.template.md) for sequenced setup
-- [Top bar](../patterns/top-bar.pattern.md)
-- [Bottom action bar](../patterns/bottom-action-bar.pattern.md)
-- [Dialog](../patterns/dialog.pattern.md) for skip / leave
-- [Button](../components/button.md), [Input](../components/input.md), [Stepper](../components/stepper.md)
+- [Wizard](./wizard.md) for sequenced setup
+- [Top bar](./top-bar.md)
+- [Bottom action bar](./bottom-action-bar.md)
+- [Dialog](./dialog.md) for skip / leave
+- [Button](../components/button.md), [Input field](../components/input-field.md), Stepper
 
 ## Structure
 

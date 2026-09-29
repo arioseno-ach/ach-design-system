@@ -1,3 +1,7 @@
+---
+kind: pattern
+---
+
 # Bottom action bar
 
 ## Purpose
