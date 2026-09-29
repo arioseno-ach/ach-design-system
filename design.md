@@ -23,7 +23,7 @@ Full terminology and do/don’t lists: `context/brand-voice.md`.
 
 - Use only values from `tokens/tokens.json` (and the generated `tokens.css`).
 - Do not introduce new colors, type sizes, or spacing steps without updating tokens first.
-- Follow foundations for how tokens combine: `foundations/color.md`, `typography.md`, `spacing.md`.
+- Follow foundations for how tokens combine: `foundations/color-typography-spacing.md`, `typography.md`, `spacing.md`.
 
 ## Interaction rules
 

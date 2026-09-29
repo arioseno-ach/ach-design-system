@@ -33,9 +33,9 @@ flowchart TD
     subgraph Design["Design Standards"]
         TASTE_F["foundations/taste.md\n(Design taste foundation)"]
         ACC["foundations/accessibility.md"]
-        COLOR["foundations/color.md"]
-        TYPE["foundations/typography.md"]
-        SPACE["foundations/spacing.md"]
+        COLOR["foundations/color-typography-spacing.md"]
+        TYPE["foundations/color-typography-spacing.md"]
+        SPACE["foundations/color-typography-spacing.md"]
     end
 
     subgraph Token["Token Layer (Single Source of Values)"]
@@ -203,9 +203,9 @@ Configure `.cursor/rules/ach-design-system.mdc` or `.agents/skills/` in your pro
 | [`design.md`](design.md) | System | Global design principles and brand voice summary |
 | [`tokens/tokens.json`](tokens/tokens.json) | Tokens | W3C DTCG source of all design values |
 | [`tokens/tokens.css`](tokens/tokens.css) | Tokens | Generated CSS custom properties (`--ach-*`) |
-| [`foundations/color.md`](foundations/color.md) | Foundations | Color token role mapping and contrast rules |
-| [`foundations/typography.md`](foundations/typography.md) | Foundations | Type scale and weight guidelines |
-| [`foundations/spacing.md`](foundations/spacing.md) | Foundations | Spacing and layout rules |
+| [`foundations/color-typography-spacing.md`](foundations/color-typography-spacing.md) | Foundations | Color token role mapping and contrast rules |
+| [`foundations/color-typography-spacing.md`](foundations/color-typography-spacing.md) | Foundations | Type scale and weight guidelines |
+| [`foundations/color-typography-spacing.md`](foundations/color-typography-spacing.md) | Foundations | Spacing and layout rules |
 | [`foundations/accessibility.md`](foundations/accessibility.md) | Foundations | WCAG baseline requirements |
 | [`foundations/taste.md`](foundations/taste.md) | Foundations | Enterprise design taste and anti-slop directives |
 | [`components/_index.md`](components/_index.md) | Components | Component registry index |
