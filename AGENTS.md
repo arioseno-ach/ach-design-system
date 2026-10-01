@@ -16,16 +16,16 @@ Agents generating frontend code **MUST** adhere strictly to these rules:
    - ✅ **ALWAYS** resolve visual values to `tokens/tokens.json` or CSS variables (`var(--ach-*)`).
 
 2. **Reuse Before Invention**:
-   - ❌ **DO NOT** invent new components or layout structures if one exists in `components/`, `patterns/`, or `templates/`.
-   - ✅ **ALWAYS** check `components/_index.md` and `patterns/patterns.md` first.
+   - ❌ **DO NOT** invent new components or layout structures if one exists in `components/` or `patterns/`.
+   - ✅ **ALWAYS** check `components/_index.md` and `patterns/_index.md` first.
 
 3. **Strict Layering Protocol**:
    - **Tokens** (`tokens/`): Raw design values only. Never put layout or behavior logic here.
    - **Foundations** (`foundations/`): Rules for combining tokens (contrast, typography scale, spacing).
    - **Components** (`components/`): Atomic, reusable UI primitives. Never encode entire business flows here.
    - **Patterns** (`patterns/`): Layouts composed of components (e.g., TopBar, BottomActionBar).
-   - **Templates** (`templates/`): Full page/modal screen flows composed of patterns and components.
-   - **Business Context** (`business-context/`): Voice, terminology, legal disclaimers, and unit rules.
+   - **Templates** (`patterns/`, `kind: template`): Full page/modal screen flows composed of patterns and components.
+   - **Context** (`context/`): Voice, terminology, legal disclaimers, and unit rules.
 
 4. **Tone & Copy Constraints**:
    - ✅ **ALWAYS** consult `context/brand-voice.md` before writing labels, button text, error messages, or modal titles.
@@ -41,9 +41,9 @@ When a prompt or task is given, determine the scope and follow the path:
 flowchart TD
     Prompt[User Prompt / UI Task] --> Type{Task Type?}
     
-    Type -->|Single Element / Control| Comp[1. Read components/{name}.component.md]
-    Type -->|Layout / Compound UI| Patt[2. Read patterns/{name}.pattern.md]
-    Type -->|Full Page / Wizard / Flow| Temp[3. Read templates/{name}.template.md]
+    Type -->|Single Element / Control| Comp[1. Read components/{name}.md]
+    Type -->|Layout / Compound UI| Patt[2. Read patterns/{name}.md]
+    Type -->|Full Page / Wizard / Flow| Temp[3. Read patterns/{name}.md with kind template]
     Type -->|Styling / Theme Question| Tok[4. Read tokens/tokens.json & foundations/]
     
     Comp --> Tokens[Map styles to tokens.json / tokens.css]
@@ -116,3 +116,27 @@ Before presenting UI code to the user, run this self-audit:
 - [ ] **Zero Em-Dash Violations**: Is visible text completely free of `—`?
 - [ ] **Consistent Verbs**: Are button labels using standard action verbs ("Continue", "Save changes", "Review") instead of non-standard ones ("Next", "Submit")?
 - [ ] **Accessibility & Error Recovery**: Do inputs have `<label>`, and do error messages explain how to fix the issue?
+
+---
+
+## 7. Global design principles
+
+- **Clarity over decoration.** Every control has one job.
+- **Reuse before inventing.** Resolve tokens first, then components, then patterns and templates.
+- **Progressive disclosure.** Show the next required step and defer optional complexity.
+- **Trust through consistency.** The same action uses the same label and placement.
+- **Accessible by default.** Meet the baseline in `foundations/accessibility.md`.
+- **Interaction recovery.** Loading, empty, error, and disabled states require an explanation and recovery path.
+- **Corrections.** Record review or production corrections in `CHANGELOG.md` and update the matching source-of-truth file.
+
+## 8. Routing
+
+| Task | Baca (urut) |
+| --- | --- |
+| Bikin screen / flow | `context/units/<BU>.md` → `patterns/_index.md` → `components/_index.md` → `tokens/tokens.json` → `context/brand-voice.md` |
+| Bikin/ubah komponen | `components/_template.md` → `components/button.md` → `foundations/` → `tokens/tokens.json` |
+| Salin/review copy | `context/brand-voice.md` → `context/legal-rules.md` → `context/units/<BU>.md` |
+| Cek visual/estetika | `.agents/skills/ach-taste/SKILL.md` → `foundations/taste.md` |
+| Cek aksesibilitas | `foundations/accessibility.md` |
+
+All tasks end by completing the anti-slop checklist above.
