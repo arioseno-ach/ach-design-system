@@ -32,8 +32,8 @@ AKA: Modal, Popup, Alert Dialog, Confirmation Dialog, Modal Window, Overlay
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Dialog Header`](./.dialog-header.component.md)
-- [`.Dialog Footer`](./.dialog-footer.component.md)
+- `.Dialog Header`
+- `.Dialog Footer`
 
 ## Code contract
 
@@ -208,7 +208,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Dialog`](./dialog.component.md)
+- [`Dialog`](./dialog.md)
 
 ## Code contract
 
@@ -225,7 +225,7 @@ interface .DialogHeaderProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Dialog`](./dialog.component.md).
+> This component is designed to be used inside [`Dialog`](./dialog.md).
 
 ```tsx
 <Dialog>
@@ -325,7 +325,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Dialog`](./dialog.component.md)
+- [`Dialog`](./dialog.md)
 
 ## Code contract
 
@@ -340,7 +340,7 @@ interface .DialogFooterProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Dialog`](./dialog.component.md).
+> This component is designed to be used inside [`Dialog`](./dialog.md).
 
 ```tsx
 <Dialog>

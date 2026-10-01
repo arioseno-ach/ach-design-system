@@ -35,12 +35,12 @@ AKA: Table Head, Column Header, Grid Header, Header Row, THead
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Header Content`](./.header-content.component.md)
+- `.Header Content`
 
 **Parent components (this component is used inside):**
-- [`Table Row v1.1`](./table-row-v1.1.component.md)
-- [`Table Colomn v1.1`](./table-colomn-v1.1.component.md)
-- [`Table Full Table v1.1`](./table-full-table-v1.1.component.md)
+- `Table Row v1.1`
+- `Table Colomn v1.1`
+- `Table Full Table v1.1`
 
 ## Code contract
 
@@ -70,7 +70,7 @@ interface TableHeaderV1.1Props {
 
 ## Usage
 
-> This component is designed to be used inside [`Table Row v1.1`](./table-row-v1.1.component.md).
+> This component is designed to be used inside `Table Row v1.1`.
 
 ```tsx
 <TableRowV1.1>
@@ -205,10 +205,10 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Table Header v1.1`](./table-header-v1.1.component.md)
-- [`Table Row v1.1`](./table-row-v1.1.component.md)
-- [`Table Colomn v1.1`](./table-colomn-v1.1.component.md)
-- [`Table Full Table v1.1`](./table-full-table-v1.1.component.md)
+- `Table Header v1.1`
+- `Table Row v1.1`
+- `Table Colomn v1.1`
+- `Table Full Table v1.1`
 
 ## Code contract
 
@@ -231,7 +231,7 @@ interface .HeaderContentProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Table Header v1.1`](./table-header-v1.1.component.md).
+> This component is designed to be used inside `Table Header v1.1`.
 
 ```tsx
 <TableHeaderV1.1>
@@ -355,11 +355,11 @@ AKA: Table Data, Grid Cell, Data Cell, TD, Column Cell
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.CellContent`](./.cell-content.component.md)
+- `.CellContent`
 
 **Parent components (this component is used inside):**
-- [`Table Colomn v1.1`](./table-colomn-v1.1.component.md)
-- [`Table Full Table v1.1`](./table-full-table-v1.1.component.md)
+- `Table Colomn v1.1`
+- `Table Full Table v1.1`
 
 ## Code contract
 
@@ -389,7 +389,7 @@ interface TableCellV1.1Props {
 
 ## Usage
 
-> This component is designed to be used inside [`Table Colomn v1.1`](./table-colomn-v1.1.component.md).
+> This component is designed to be used inside `Table Colomn v1.1`.
 
 ```tsx
 <TableColomnV1.1>
@@ -482,9 +482,9 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Table Cell v1.1`](./table-cell-v1.1.component.md)
-- [`Table Colomn v1.1`](./table-colomn-v1.1.component.md)
-- [`Table Full Table v1.1`](./table-full-table-v1.1.component.md)
+- `Table Cell v1.1`
+- `Table Colomn v1.1`
+- `Table Full Table v1.1`
 
 ## Code contract
 
@@ -509,7 +509,7 @@ interface .CellContentProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Table Cell v1.1`](./table-cell-v1.1.component.md).
+> This component is designed to be used inside `Table Cell v1.1`.
 
 ```tsx
 <TableCellV1.1>
@@ -607,11 +607,11 @@ AKA: Table Record, Data Row, Grid Row, TR, Table Entry
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Table Header v1.1`](./table-header-v1.1.component.md)
-- [`.Header Content`](./.header-content.component.md)
+- `Table Header v1.1`
+- `.Header Content`
 
 **Parent components (this component is used inside):**
-- [`Table Full Table v1.1`](./table-full-table-v1.1.component.md)
+- `Table Full Table v1.1`
 
 ## Code contract
 
@@ -639,7 +639,7 @@ interface TableRowV1.1Props {
 
 ## Usage
 
-> This component is designed to be used inside [`Table Full Table v1.1`](./table-full-table-v1.1.component.md).
+> This component is designed to be used inside `Table Full Table v1.1`.
 
 ```tsx
 <TableFullTableV1.1>
@@ -986,10 +986,10 @@ AKA: Table Column, Data Column, Grid Column, Column Stack
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Table Header v1.1`](./table-header-v1.1.component.md)
-- [`.Header Content`](./.header-content.component.md)
-- [`Table Cell v1.1`](./table-cell-v1.1.component.md)
-- [`.CellContent`](./.cell-content.component.md)
+- `Table Header v1.1`
+- `.Header Content`
+- `Table Cell v1.1`
+- `.CellContent`
 
 ## Code contract
 
@@ -1318,11 +1318,11 @@ AKA: Data Table, Data Grid, Grid, Spreadsheet, Table View, Record List
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Table Row v1.1`](./table-row-v1.1.component.md)
-- [`Table Header v1.1`](./table-header-v1.1.component.md)
-- [`.Header Content`](./.header-content.component.md)
-- [`Table Cell v1.1`](./table-cell-v1.1.component.md)
-- [`.CellContent`](./.cell-content.component.md)
+- `Table Row v1.1`
+- `Table Header v1.1`
+- `.Header Content`
+- `Table Cell v1.1`
+- `.CellContent`
 
 ## Code contract
 

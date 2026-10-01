@@ -159,7 +159,7 @@ sequenceDiagram
     Designer->>Repo: 1. Export Variables -> tokens/tokens.json
     Dev->>Repo: 2. Generate tokens.css (Style Dictionary)
     Designer->>Dev: 3. Component Spec in Figma
-    Dev->>Repo: 4. Create components/{name}.component.md using template
+    Dev->>Repo: 4. Create components/{name}.md using template
     Repo-->>App: 5. Submodule update or npm pull
     Dev->>App: 6. AI Agent builds component matching MD spec
 ```
@@ -172,7 +172,7 @@ sequenceDiagram
 
 ### 2. Extracting Components
 1. Copy [`components/_template.md`](../components/_template.md).
-2. Name the file `components/{component-name}.component.md`.
+2. Name the file `components/{component-name}.md`.
 3. Fill in:
    - **Frontmatter**: Component ID, name, status, tokens used.
    - **Code Contract**: TypeScript interface (`interface Props`), states, and CSS/Tailwind class mapping.
@@ -186,7 +186,7 @@ sequenceDiagram
 
 When an engineer or AI agent is tasked with building a new screen:
 
-1. **Check Template**: Is this screen an Onboarding flow or a Wizard? Look at `templates/wizard.template.md`.
+1. **Check Template**: Is this screen an Onboarding flow or a Wizard? Look at `patterns/wizard.md`.
 2. **Check Patterns**: Does it need a Top Bar and Bottom Bar? Look at `patterns/`.
 3. **Assemble Components**: Use verified primitives from `components/`.
 4. **Validate Verbs & Copy**: Consult `context/brand-voice.md` (e.g., use "Continue" instead of "Next").

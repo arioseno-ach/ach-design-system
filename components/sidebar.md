@@ -21,7 +21,7 @@ AKA: Nav Section Label, Sidebar Section, Nav Group Header, Menu Group Label
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Sidebar`](./sidebar.component.md)
+- [`Sidebar`](./sidebar.md)
 
 ## Code contract
 
@@ -38,7 +38,7 @@ interface SidebarGroupLabelProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Sidebar`](./sidebar.component.md).
+> This component is designed to be used inside [`Sidebar`](./sidebar.md).
 
 ```tsx
 <Sidebar>
@@ -154,9 +154,9 @@ AKA: Side Navigation, Sidenav, Nav Panel, Left Menu, Navigation Drawer, Side Men
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Sidebar / Profile`](./.sidebar-profile.component.md)
-- [`Sidebar Item`](./sidebar-item.component.md)
-- [`Sidebar Group Label`](./sidebar-group-label.component.md)
+- `.Sidebar / Profile`
+- `Sidebar Item`
+- `Sidebar Group Label`
 
 ## Code contract
 
@@ -538,7 +538,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Sidebar`](./sidebar.component.md)
+- [`Sidebar`](./sidebar.md)
 
 ## Code contract
 
@@ -553,7 +553,7 @@ interface .SidebarProfileProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Sidebar`](./sidebar.component.md).
+> This component is designed to be used inside [`Sidebar`](./sidebar.md).
 
 ```tsx
 <Sidebar>
@@ -686,7 +686,7 @@ AKA: Nav Item, Menu Item, Sidebar Link, Navigation Link, Nav Link
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Sidebar`](./sidebar.component.md)
+- [`Sidebar`](./sidebar.md)
 
 ## Code contract
 
@@ -711,7 +711,7 @@ interface SidebarItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Sidebar`](./sidebar.component.md).
+> This component is designed to be used inside [`Sidebar`](./sidebar.md).
 
 ```tsx
 <Sidebar>

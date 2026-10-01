@@ -25,9 +25,9 @@ flowchart TD
 
 ### 3 Solusi Software Utama (Dedicated Business Contexts):
 
-1. **[OnlinePajak](onlinepajak.context.md)**: Platform kepatuhan perpajakan (e-Faktur, e-Bupot, hitung, bayar, lapor SPT) sebagai PJAP resmi mitra DJP & BI.
-2. **[Credor](credor.context.md)**: Akses pembiayaan bisnis (invoice financing, working capital) dan penilaian profil risiko kredit mitra berbasis AI.
-3. **[Covia](covia.context.md)**: Market intelligence pergerakan harga bahan baku/komoditas regional dan visibilitas distribusi di seluruh Indonesia.
+1. **[OnlinePajak](units/onlinepajak.md)**: Platform kepatuhan perpajakan (e-Faktur, e-Bupot, hitung, bayar, lapor SPT) sebagai PJAP resmi mitra DJP & BI.
+2. **[Credor](units/credor.md)**: Akses pembiayaan bisnis (invoice financing, working capital) dan penilaian profil risiko kredit mitra berbasis AI.
+3. **[Covia](units/covia.md)**: Market intelligence pergerakan harga bahan baku/komoditas regional dan visibilitas distribusi di seluruh Indonesia.
 
 ### 2 Platform Hub Pendukung:
 - **Transaction Hub**: Pembuatan, pengiriman invoice komersial, rekonsiliasi, hingga penerimaan pembayaran terotomatisasi.

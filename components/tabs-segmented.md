@@ -26,7 +26,7 @@ AKA: Segment, Segmented Tab, Pill Tab, Toggle Item, Segment Button
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Tabs Segemented`](./tabs-segemented.component.md)
+- `Tabs Segemented`
 
 ## Code contract
 
@@ -51,7 +51,7 @@ interface TabSegmentedItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Tabs Segemented`](./tabs-segemented.component.md).
+> This component is designed to be used inside `Tabs Segemented`.
 
 ```tsx
 <TabsSegemented>
@@ -156,7 +156,7 @@ AKA: Segmented Control, Segmented Tabs, Pill Tabs, Toggle Tabs, Tab Pills, Switc
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Tab Segmented Item`](./tab-segmented-item.component.md)
+- `Tab Segmented Item`
 
 ## Code contract
 

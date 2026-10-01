@@ -26,7 +26,7 @@ AKA: Menu Item, Dropdown Item, Option, Action Item, List Action
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Contextual Menu v1.1`](./contextual-menu-v1.1.component.md)
+- `Contextual Menu v1.1`
 
 ## Code contract
 
@@ -47,7 +47,7 @@ interface ContextualMenuItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Contextual Menu v1.1`](./contextual-menu-v1.1.component.md).
+> This component is designed to be used inside `Contextual Menu v1.1`.
 
 ```tsx
 <ContextualMenuV1.1>
@@ -253,7 +253,7 @@ Popup, Popover
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Contextual Menu Item`](./contextual-menu-item.component.md)
+- `Contextual Menu Item`
 
 ## Code contract
 

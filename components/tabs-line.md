@@ -24,7 +24,7 @@ AKA: Tab, Tab Button, Tab Item, Navigation Tab, Tab Link
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Tabs Line`](./tabs-line.component.md)
+- [`Tabs Line`](./tabs-line.md)
 
 ## Code contract
 
@@ -49,7 +49,7 @@ interface TabLineItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Tabs Line`](./tabs-line.component.md).
+> This component is designed to be used inside [`Tabs Line`](./tabs-line.md).
 
 ```tsx
 <TabsLine>
@@ -152,7 +152,7 @@ AKA: Tab Bar, Underline Tabs, Navigation Tabs, Content Tabs, Tab Navigation
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Tab Line Item`](./tab-line-item.component.md)
+- `Tab Line Item`
 
 ## Code contract
 

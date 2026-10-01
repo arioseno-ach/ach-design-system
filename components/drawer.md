@@ -31,8 +31,8 @@ AKA: Side Panel, Slide-over, Sheet, Side Sheet, Off-canvas, Flyout Panel
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Drawer Header`](./.drawer-header.component.md)
-- [`.Drawer Footer`](./.drawer-footer.component.md)
+- `.Drawer Header`
+- `.Drawer Footer`
 
 ## Code contract
 
@@ -204,7 +204,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Drawer`](./drawer.component.md)
+- [`Drawer`](./drawer.md)
 
 ## Code contract
 
@@ -221,7 +221,7 @@ interface .DrawerHeaderProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Drawer`](./drawer.component.md).
+> This component is designed to be used inside [`Drawer`](./drawer.md).
 
 ```tsx
 <Drawer>
@@ -321,7 +321,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Drawer`](./drawer.component.md)
+- [`Drawer`](./drawer.md)
 
 ## Code contract
 
@@ -336,7 +336,7 @@ interface .DrawerFooterProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Drawer`](./drawer.component.md).
+> This component is designed to be used inside [`Drawer`](./drawer.md).
 
 ```tsx
 <Drawer>

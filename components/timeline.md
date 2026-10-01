@@ -26,7 +26,7 @@ AKA: Timeline Entry, Timeline Event, Timeline Step, Activity Item, History Item
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Timeline`](./timeline.component.md)
+- [`Timeline`](./timeline.md)
 
 ## Code contract
 
@@ -53,7 +53,7 @@ interface TimelineItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Timeline`](./timeline.component.md).
+> This component is designed to be used inside [`Timeline`](./timeline.md).
 
 ```tsx
 <Timeline>
@@ -163,7 +163,7 @@ AKA: Activity Feed, Event Timeline, History, Stepper, Activity Log, Time Feed
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Timeline Item`](./timeline-item.component.md)
+- `Timeline Item`
 
 ## Code contract
 

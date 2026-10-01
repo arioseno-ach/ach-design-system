@@ -22,8 +22,8 @@ AKA: Page Arrow, Nav Arrow, Pagination Button, Page Control Button
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`.Pagination Navigation Group`](./.pagination-navigation-group.component.md)
-- [`Pagination`](./pagination.component.md)
+- `.Pagination Navigation Group`
+- [`Pagination`](./pagination.md)
 
 ## Code contract
 
@@ -38,7 +38,7 @@ interface .PaginationNavigationProps {
 
 ## Usage
 
-> This component is designed to be used inside [`.Pagination Navigation Group`](./.pagination-navigation-group.component.md).
+> This component is designed to be used inside `.Pagination Navigation Group`.
 
 ```tsx
 <.PaginationNavigationGroup>
@@ -125,8 +125,8 @@ AKA: Page Info, Pagination Label, Page Counter, Record Info, Rows Per Page
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`.Pagination Navigation Group`](./.pagination-navigation-group.component.md)
-- [`Pagination`](./pagination.component.md)
+- `.Pagination Navigation Group`
+- [`Pagination`](./pagination.md)
 
 ## Code contract
 
@@ -145,7 +145,7 @@ interface .PaginationInformationProps {
 
 ## Usage
 
-> This component is designed to be used inside [`.Pagination Navigation Group`](./.pagination-navigation-group.component.md).
+> This component is designed to be used inside `.Pagination Navigation Group`.
 
 ```tsx
 <.PaginationNavigationGroup>
@@ -232,11 +232,11 @@ AKA: Pager Controls, Navigation Arrows, Page Nav Group
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Pagination Navigation`](./.pagination-navigation.component.md)
-- [`.Pagination Information`](./.pagination-information.component.md)
+- `.Pagination Navigation`
+- `.Pagination Information`
 
 **Parent components (this component is used inside):**
-- [`Pagination`](./pagination.component.md)
+- [`Pagination`](./pagination.md)
 
 ## Code contract
 
@@ -260,7 +260,7 @@ interface .PaginationNavigationGroupProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Pagination`](./pagination.component.md).
+> This component is designed to be used inside [`Pagination`](./pagination.md).
 
 ```tsx
 <Pagination>
@@ -391,9 +391,9 @@ AKA: Pager, Page Navigation, Page Selector, Page Controls, Data Pagination
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.Pagination Information`](./.pagination-information.component.md)
-- [`.Pagination Navigation Group`](./.pagination-navigation-group.component.md)
-- [`.Pagination Navigation`](./.pagination-navigation.component.md)
+- `.Pagination Information`
+- `.Pagination Navigation Group`
+- `.Pagination Navigation`
 
 ## Code contract
 

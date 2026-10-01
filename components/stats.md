@@ -27,7 +27,7 @@ AKA: Stat Card, Metric Item, KPI Item, Data Point, Stat Tile
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Stats`](./stats.component.md)
+- [`Stats`](./stats.md)
 
 ## Code contract
 
@@ -52,7 +52,7 @@ interface StatsItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Stats`](./stats.component.md).
+> This component is designed to be used inside [`Stats`](./stats.md).
 
 ```tsx
 <Stats>
@@ -164,7 +164,7 @@ AKA: Metrics, KPI Card, Stat Group, Data Summary, Key Figures, Stats Overview
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Stats Item`](./stats-item.component.md)
+- `Stats Item`
 
 ## Code contract
 

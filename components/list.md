@@ -25,7 +25,7 @@ AKA: List Row, List Entry, List Cell, Menu Item, List Tile
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`List`](./list.component.md)
+- [`List`](./list.md)
 
 ## Code contract
 
@@ -56,7 +56,7 @@ interface ListItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`List`](./list.component.md).
+> This component is designed to be used inside [`List`](./list.md).
 
 ```tsx
 <List>
@@ -170,7 +170,7 @@ AKA: List View, Item List, Content List, Stack List, Vertical List
 ## Relationships
 
 **Child components (used inside this component):**
-- [`List Item`](./list-item.component.md)
+- `List Item`
 
 ## Code contract
 

@@ -29,7 +29,7 @@ AKA: Tree View, File Tree, Directory Tree, Nested Navigation, Hierarchy View, Fo
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Tree Item`](./tree-item.component.md)
+- `Tree Item`
 
 ## Code contract
 
@@ -259,7 +259,7 @@ AKA: Tree Node, Tree Leaf, Tree Branch, Nested Item, Hierarchy Item
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Tree Navigation`](./tree-navigation.component.md)
+- `Tree Navigation`
 
 ## Code contract
 
@@ -284,7 +284,7 @@ interface TreeItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Tree Navigation`](./tree-navigation.component.md).
+> This component is designed to be used inside `Tree Navigation`.
 
 ```tsx
 <TreeNavigation>

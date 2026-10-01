@@ -21,7 +21,7 @@ AKA: Breadcrumb Link, Crumb, Path Item, Navigation Item
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Breadcrumb`](./breadcrumb.component.md)
+- [`Breadcrumb`](./breadcrumb.md)
 
 ## Code contract
 
@@ -44,7 +44,7 @@ interface BreadcrumbItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Breadcrumb`](./breadcrumb.component.md).
+> This component is designed to be used inside [`Breadcrumb`](./breadcrumb.md).
 
 ```tsx
 <Breadcrumb>
@@ -133,7 +133,7 @@ AKA: Breadcrumb Trail, Navigation Path, Page Path, Crumb Trail, Location Trail
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Breadcrumb item`](./breadcrumb-item.component.md)
+- `Breadcrumb item`
 
 ## Code contract
 

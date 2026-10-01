@@ -24,7 +24,7 @@ AKA: Accordion Section, Expandable Item, Collapse Item, Disclosure Item
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`Accordion`](./accordion.component.md)
+- [`Accordion`](./accordion.md)
 
 ## Code contract
 
@@ -45,7 +45,7 @@ interface AccordionItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`Accordion`](./accordion.component.md).
+> This component is designed to be used inside [`Accordion`](./accordion.md).
 
 ```tsx
 <Accordion>
@@ -143,7 +143,7 @@ AKA: Expandable, Collapsible, Disclosure, Expand/Collapse Panel, FAQ
 ## Relationships
 
 **Child components (used inside this component):**
-- [`Accordion Item`](./accordion-item.component.md)
+- `Accordion Item`
 
 ## Code contract
 

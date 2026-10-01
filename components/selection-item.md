@@ -21,7 +21,7 @@ parent_components:
 ## Relationships
 
 **Parent components (this component is used inside):**
-- [`.03 Selection`](./.03-selection.component.md)
+- `.03 Selection`
 
 ## Code contract
 
@@ -38,7 +38,7 @@ interface .03SelectionItemProps {
 
 ## Usage
 
-> This component is designed to be used inside [`.03 Selection`](./.03-selection.component.md).
+> This component is designed to be used inside `.03 Selection`.
 
 ```tsx
 <.03Selection>

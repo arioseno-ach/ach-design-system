@@ -27,7 +27,7 @@ child_components:
 ## Relationships
 
 **Child components (used inside this component):**
-- [`.03 Selection Item`](./.03-selection-item.component.md)
+- `.03 Selection Item`
 
 ## Code contract
 

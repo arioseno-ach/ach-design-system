@@ -1,6 +1,6 @@
 # Corrections log
 
-Rolling log of agent mistakes and review findings. Each entry should be folded into the matching rule file (`design.md`, foundations, component, pattern, template, or business-context). Do not treat this file as the source of truth after a fold-back.
+Rolling log of agent mistakes and review findings. Each entry should be folded into the matching rule file (`AGENTS.md`, foundations, component, pattern, template, or context). Do not treat this file as the source of truth after a fold-back.
 
 ## Template
 
