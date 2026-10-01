@@ -13,8 +13,8 @@
 
 ### The Problem
 In the **ACH Design System**, the single source of truth for AI agents (Cursor, Antigravity, Claude, Copilot) consists of:
-1. W3C DTCG Token Dictionary ([`tokens/tokens.json`](../tokens/tokens.json))
-2. Structured Markdown Component Specifications with YAML frontmatter & TypeScript contracts ([`components/_template.md`](../components/_template.md))
+1. W3C DTCG Token Dictionary ([`tokens/tokens.json`](../../tokens/tokens.json))
+2. Structured Markdown Component Specifications with YAML frontmatter & TypeScript contracts ([`components/_template.md`](../../components/_template.md))
 
 Currently, designers build components and tokens in **Figma**, but bridging them to this repository requires **manual transcription**:
 - Copying hex codes, padding numbers, and variant names by hand.
@@ -24,7 +24,7 @@ Currently, designers build components and tokens in **Figma**, but bridging them
 ### The Solution
 Build a lightweight **Figma Plugin** that inspects Figma Variables and Component Sets with a single click and automatically generates:
 1. **`tokens.json`**: Formatted according to W3C Design Token Community Group (DTCG).
-2. **`{name}.component.md`**: Formatted exactly according to `components/_template.md` with YAML frontmatter, TypeScript props contract, token mapping, and variant anatomy.
+2. **`{name}.md`**: Formatted exactly according to `components/_template.md` with YAML frontmatter, TypeScript props contract, token mapping, and variant anatomy.
 
 ---
 
@@ -32,7 +32,7 @@ Build a lightweight **Figma Plugin** that inspects Figma Variables and Component
 
 ### Goals (In Scope)
 - **1-Click Token Export**: Read all Figma Local Variables (Colors, Spacing, Radius, Typography) and serialize them into DTCG-compliant `tokens.json`.
-- **1-Click Component Spec Export**: Select any Figma `ComponentSet` or `Component` and automatically generate an Agent-Ready Markdown file (`{name}.component.md`).
+- **1-Click Component Spec Export**: Select any Figma `ComponentSet` or `Component` and automatically generate an Agent-Ready Markdown file (`{name}.md`).
 - **Variable-to-Token Binding Detection**: Detect if a component's padding, fill, or radius is bound to a Figma Variable, and automatically resolve it to its token name (e.g. `color.brand.500`, `space.16`).
 - **Interactive Plugin UI**: Tabbed interface with live syntax-highlighted preview, "Copy to Clipboard", and "Download File" buttons.
 - **Direct GitHub Sync (Phase 2)**: Push exported files directly to the `ach-design-system` GitHub repository using the GitHub API.
@@ -54,7 +54,7 @@ Build a lightweight **Figma Plugin** that inspects Figma Variables and Component
 2. Designer launches the plugin $\to$ Plugin automatically detects selection: `Button (ComponentSetNode with 24 variants)`.
 3. Designer clicks **"Generate Component Spec"**.
 4. The plugin analyzes properties, variants, auto layout, and bound variables, then outputs the markdown in the preview window.
-5. Designer clicks **"Copy Markdown"** (or **"Save as button.component.md"**).
+5. Designer clicks **"Copy Markdown"** (or **"Save as button.md"**).
 6. File is placed in `ach-design-system/components/`.
 
 ### User Journey 2: Exporting Design Tokens
@@ -79,7 +79,7 @@ Build a lightweight **Figma Plugin** that inspects Figma Variables and Component
 
 ---
 
-### 4.2. Module B: Component Spec Generator (`.component.md`)
+### 4.2. Module B: Component Spec Generator (`.md`)
 
 When a `ComponentSetNode` or `ComponentNode` is selected:
 
@@ -209,9 +209,9 @@ sequenceDiagram
 
     Designer->>Plugin: Click "Commit to GitHub"
     Plugin->>Plugin: Retrieve stored GitHub PAT & Repo config
-    Plugin->>GH: GET /repos/arioseno-ach/ach-design-system/contents/components/{name}.component.md
+    Plugin->>GH: GET /repos/arioseno-ach/ach-design-system/contents/components/{name}.md
     GH-->>Plugin: Return current SHA (or 404 if new file)
-    Plugin->>GH: PUT /repos/arioseno-ach/ach-design-system/contents/components/{name}.component.md
+    Plugin->>GH: PUT /repos/arioseno-ach/ach-design-system/contents/components/{name}.md
     GH-->>Repo: Create commit on target branch (e.g. `main` or new branch)
     Plugin-->>Designer: Show success notification with commit link
 ```
@@ -224,7 +224,7 @@ sequenceDiagram
 | :--- | :--- | :--- |
 | **M1: Plugin Scaffold** | Initialize Figma plugin project (`manifest.json`, Vite, TypeScript setup, basic tabbed UI). | Day 1-2 |
 | **M2: Token Extractor** | Extract all Local Variables $\to$ DTCG JSON format $\to$ Copy/Download. | Day 3-4 |
-| **M3: Component Parser** | Parse `ComponentSetNode`, variants, auto-layout, bound variables $\to$ Generate `.component.md` matching template. | Day 5-7 |
+| **M3: Component Parser** | Parse `ComponentSetNode`, variants, auto-layout, bound variables $\to$ Generate `.md` matching template. | Day 5-7 |
 | **M4: Polish & Testing** | Test on Button, Input, Modal in Figma. Edge-case handling (unbound styles, non-auto-layout). | Day 8-9 |
 | **M5: GitHub API Sync** | Add GitHub PAT settings and direct commit endpoint. | Day 10 |
 
@@ -232,8 +232,8 @@ sequenceDiagram
 
 ## 8. Acceptance Criteria
 
-- [ ] Selecting any `ComponentSetNode` in Figma outputs markdown that strictly matches [`components/_template.md`](../components/_template.md).
+- [ ] Selecting any `ComponentSetNode` in Figma outputs markdown that strictly matches [`components/_template.md`](../../components/_template.md).
 - [ ] Frontmatter contains valid YAML with `id`, `name`, `figma_component_name`, and `tokens_used`.
 - [ ] All Figma Variable bindings (`color/*`, `space/*`, `radius/*`) are correctly translated to `color.*`, `space.*`, and `var(--ach-*)`.
-- [ ] Exported tokens from Figma match the structure of [`tokens/tokens.json`](../tokens/tokens.json).
+- [ ] Exported tokens from Figma match the structure of [`tokens/tokens.json`](../../tokens/tokens.json).
 - [ ] An AI agent (Cursor, Antigravity, Claude) can read the generated markdown file and immediately generate compliant frontend components with zero manual corrections.
