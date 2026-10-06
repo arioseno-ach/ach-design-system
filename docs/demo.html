@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACH Design System - Token and Component Showcase</title>
+  <meta name="description" content="Interactive verification and demo page for ACH Design System tokens and components." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Link directly to design system tokens -->
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--primitives-font-families-body), sans-serif;
+      font-size: var(--primitives-font-sizes-sm);
+      line-height: var(--primitives-line-heights-sm);
+      background: var(--semantic-bg-ach-color-bg-canvas);
+      color: var(--semantic-text-ach-color-text-default);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Navigation */
+    .topbar {
+      background: var(--component-topbar-background);
+      border-bottom: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-default);
+      padding: var(--primitives-padding-3) var(--primitives-padding-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: var(--primitives-padding-2);
+    }
+    .topbar-title {
+      font-size: var(--primitives-font-sizes-md);
+      font-weight: 600;
+      color: var(--semantic-brand-ach-color-brand-default);
+    }
+    .topbar-subtitle {
+      font-size: var(--primitives-font-sizes-xs);
+      color: var(--semantic-text-ach-color-text-secondary);
+    }
+
+    main {
+      margin: 0 auto;
+      padding: var(--primitives-padding-8) var(--primitives-padding-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-8);
+    }
+
+    /* Health Check Banner */
+    .diagnostic-panel {
+      padding: var(--primitives-padding-4);
+      border-radius: var(--primitives-border-radius-sm);
+      border: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-default);
+      background: var(--semantic-bg-ach-color-bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--primitives-padding-4);
+    }
+    .diagnostic-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-1);
+    }
+    .diagnostic-heading {
+      font-size: var(--primitives-font-sizes-sm);
+      font-weight: 600;
+    }
+    .diagnostic-details {
+      font-size: var(--primitives-font-sizes-xs);
+      color: var(--semantic-text-ach-color-text-secondary);
+      font-family: monospace;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: var(--primitives-font-sizes-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--semantic-text-ach-color-text-secondary);
+      margin-bottom: var(--primitives-padding-3);
+      padding-bottom: var(--primitives-padding-2);
+      border-bottom: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-subtle);
+    }
+
+    /* Swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--primitives-padding-3);
+    }
+    .swatch {
+      border: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-default);
+      border-radius: var(--primitives-border-radius-sm);
+      overflow: hidden;
+      background: var(--semantic-bg-ach-color-bg-surface);
+    }
+    .swatch-preview {
+      aspect-ratio: 2 / 1;
+    }
+    .swatch-meta {
+      padding: var(--primitives-padding-2);
+    }
+    .swatch-label {
+      font-size: var(--primitives-font-sizes-xs);
+      font-weight: 500;
+      color: var(--semantic-text-ach-color-text-default);
+    }
+    .swatch-token {
+      font-size: var(--primitives-font-sizes-2xs);
+      color: var(--semantic-text-ach-color-text-subtle);
+      font-family: monospace;
+      margin-top: var(--primitives-padding-1);
+    }
+
+    /* Buttons */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--primitives-padding-3);
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--primitives-padding-2);
+      padding: var(--primitives-padding-2) var(--primitives-padding-4);
+      border-radius: var(--primitives-border-radius-infinite);
+      font-family: inherit;
+      font-size: var(--primitives-font-sizes-sm);
+      font-weight: 500;
+      line-height: var(--primitives-line-heights-sm);
+      cursor: pointer;
+      border: var(--primitives-border-width-default) solid transparent;
+    }
+    .btn:focus-visible {
+      outline: var(--primitives-padding-1) solid var(--semantic-brand-ach-color-brand-default);
+      outline-offset: var(--primitives-padding-1);
+    }
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .btn-brand {
+      background: var(--component-button-solid-brand-bg);
+      color: var(--component-button-solid-brand-text);
+    }
+    .btn-brand:hover:not(:disabled) {
+      background: var(--component-button-solid-brand-bg-hover);
+    }
+
+    /* Button Solid Primary. Uses the primary component token family. */
+    .btn-solid-primary {
+      background: var(--component-button-primary-background);
+      border-color: var(--component-button-primary-border);
+      color: var(--component-button-primary-text);
+    }
+    .btn-solid-primary:hover:not(:disabled) {
+      background: var(--component-button-primary-background-hover);
+    }
+    .btn-solid-primary:active:not(:disabled) {
+      background: var(--component-button-primary-background-active);
+    }
+    .btn-solid-primary:disabled {
+      background: var(--component-button-primary-background-disabled);
+      color: var(--semantic-text-ach-color-text-disabled);
+    }
+
+    .btn-outlined {
+      background: var(--component-button-outlined-primary-bg);
+      color: var(--component-button-outlined-primary-text);
+      border-color: var(--component-button-outlined-primary-border);
+    }
+    .btn-outlined:hover:not(:disabled) {
+      background: var(--component-button-outlined-primary-bg-hover);
+    }
+
+    .btn-outlined-brand {
+      background: var(--component-button-outlined-brand-bg);
+      color: var(--component-button-outlined-brand-text);
+      border-color: var(--component-button-outlined-brand-border);
+    }
+    .btn-outlined-brand:hover:not(:disabled) {
+      background: var(--component-button-outlined-brand-bg-hover);
+    }
+
+    .btn-danger {
+      background: var(--component-button-solid-error-bg);
+      color: var(--component-button-solid-error-text);
+    }
+
+    .btn-link {
+      background: transparent;
+      border: none;
+      color: var(--component-button-text-text);
+      padding: var(--primitives-padding-2) 0;
+    }
+    .btn-link:hover:not(:disabled) {
+      color: var(--component-button-text-text-hover);
+      text-decoration: underline;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--primitives-padding-1);
+      padding: var(--primitives-padding-1) var(--primitives-padding-2);
+      border-radius: var(--primitives-border-radius-infinite);
+      font-size: var(--primitives-font-sizes-xs);
+      font-weight: 500;
+      border: var(--primitives-border-width-default) solid transparent;
+      line-height: var(--primitives-line-heights-2xs);
+    }
+    .badge-dot {
+      width: var(--primitives-padding-1);
+      height: var(--primitives-padding-1);
+      border-radius: var(--primitives-border-radius-infinite);
+    }
+    .badge-success {
+      background: var(--component-badge-success-background);
+      color: var(--component-badge-success-text);
+      border-color: var(--component-badge-success-border);
+    }
+    .badge-success .badge-dot { background: var(--component-badge-success-icon); }
+
+    .badge-warning {
+      background: var(--component-badge-warning-background);
+      color: var(--component-badge-warning-text);
+      border-color: var(--component-badge-warning-border);
+    }
+    .badge-warning .badge-dot { background: var(--component-badge-warning-icon); }
+
+    .badge-info {
+      background: var(--component-badge-info-background);
+      color: var(--component-badge-info-text);
+      border-color: var(--component-badge-info-border);
+    }
+    .badge-info .badge-dot { background: var(--component-badge-info-icon); }
+
+    .badge-error {
+      background: var(--component-badge-error-background);
+      color: var(--component-badge-error-text);
+      border-color: var(--component-badge-error-border);
+    }
+    .badge-error .badge-dot { background: var(--component-badge-error-icon); }
+
+    .badge-neutral {
+      background: var(--component-badge-neutral-background);
+      color: var(--component-badge-neutral-text);
+      border-color: var(--component-badge-neutral-border);
+    }
+    .badge-neutral .badge-dot { background: var(--semantic-icon-ach-color-icon-subtle); }
+
+    /* Alerts */
+    .alert-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-3);
+    }
+    .alert {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--primitives-padding-3);
+      padding: var(--primitives-padding-3) var(--primitives-padding-4);
+      border-radius: var(--primitives-border-radius-sm);
+      border: var(--primitives-border-width-default) solid transparent;
+    }
+    .alert-title {
+      font-size: var(--primitives-font-sizes-sm);
+      font-weight: 600;
+    }
+    .alert-body {
+      font-size: var(--primitives-font-sizes-xs);
+      margin-top: var(--primitives-padding-1);
+    }
+    .alert-info {
+      background: var(--component-alert-info-background);
+      border-color: var(--component-alert-info-border);
+      color: var(--component-alert-info-text);
+    }
+    .alert-success {
+      background: var(--component-alert-success-background);
+      border-color: var(--component-alert-success-border);
+      color: var(--component-alert-success-text);
+    }
+    .alert-warning {
+      background: var(--component-alert-warning-background);
+      border-color: var(--component-alert-warning-border);
+      color: var(--component-alert-warning-text);
+    }
+    .alert-error {
+      background: var(--component-alert-error-background);
+      border-color: var(--component-alert-error-border);
+      color: var(--component-alert-error-text);
+    }
+
+    /* Form Fields */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--primitives-padding-4);
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-1);
+    }
+    .field-label {
+      font-size: var(--primitives-font-sizes-xs);
+      font-weight: 500;
+      color: var(--component-input-label-text);
+    }
+    .field-input {
+      background: var(--component-input-background);
+      border: var(--primitives-border-width-default) solid var(--component-input-border);
+      border-radius: var(--primitives-border-radius-sm);
+      padding: var(--primitives-padding-2) var(--primitives-padding-3);
+      font-family: inherit;
+      font-size: var(--primitives-font-sizes-sm);
+      color: var(--component-input-text);
+      outline: none;
+    }
+    .field-input:focus {
+      border-color: var(--component-input-border-focus);
+      outline: var(--primitives-padding-1) solid var(--semantic-brand-ach-color-brand-muted);
+      outline-offset: var(--primitives-padding-1);
+    }
+    .field-input.has-error {
+      border-color: var(--component-input-border-error);
+    }
+    .field-input:disabled {
+      background: var(--semantic-bg-ach-color-bg-surface-secondary);
+      color: var(--semantic-text-ach-color-text-disabled);
+      cursor: not-allowed;
+    }
+    .field-helper {
+      font-size: var(--primitives-font-sizes-xs);
+      color: var(--component-input-helper-text);
+    }
+    .field-error-msg {
+      font-size: var(--primitives-font-sizes-xs);
+      color: var(--component-input-error-text);
+    }
+
+    /* Stats Grid */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      background: var(--component-stats-border);
+      border: var(--primitives-border-width-default) solid var(--component-stats-border);
+      border-radius: var(--primitives-border-radius-lg);
+      gap: var(--primitives-border-width-default);
+      overflow: hidden;
+    }
+    .stat-card {
+      background: var(--component-stats-item-background);
+      padding: var(--primitives-padding-4) var(--primitives-padding-5);
+    }
+    .stat-title {
+      font-size: var(--primitives-font-sizes-2xs);
+      color: var(--component-stats-item-title);
+    }
+    .stat-value {
+      font-size: var(--primitives-font-sizes-xl);
+      font-weight: 600;
+      color: var(--component-stats-item-number);
+      font-variant-numeric: tabular-nums;
+      margin-top: var(--primitives-padding-1);
+    }
+    .stat-caption {
+      font-size: var(--primitives-font-sizes-2xs);
+      color: var(--component-stats-item-subtitle);
+      margin-top: var(--primitives-padding-1);
+    }
+    .stat-caption.positive {
+      color: var(--semantic-fg-success-ach-color-fg-success);
+    }
+
+    /* Table */
+    .table-container {
+      border: var(--primitives-border-width-default) solid var(--component-table-border);
+      border-radius: var(--primitives-border-radius-sm);
+      overflow: hidden;
+      background: var(--component-table-background);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+    th {
+      background: var(--component-table-header-background);
+      color: var(--component-table-header-text);
+      font-size: var(--primitives-font-sizes-xs);
+      font-weight: 600;
+      text-align: left;
+      padding: var(--primitives-padding-3) var(--primitives-padding-4);
+      border-bottom: var(--primitives-border-width-default) solid var(--component-table-border);
+    }
+    td {
+      padding: var(--primitives-padding-2) var(--primitives-padding-4);
+      font-size: var(--primitives-font-sizes-sm);
+      border-bottom: var(--primitives-border-width-default) solid var(--component-table-cell-divider);
+      color: var(--component-table-row-text);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    td.num {
+      text-align: right;
+      font-family: monospace;
+    }
+
+    /* Sidebar */
+    .sidebar-demo {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      border: var(--primitives-border-width-default) solid var(--component-sidebar-border);
+      border-radius: var(--primitives-border-radius-lg);
+      overflow: hidden;
+      background: var(--semantic-bg-ach-color-bg-canvas);
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-4);
+      padding: var(--primitives-padding-4) var(--primitives-padding-2);
+      background: var(--component-sidebar-background);
+      border-right: var(--primitives-border-width-default) solid var(--component-sidebar-border);
+    }
+    .sidebar-profile {
+      padding: var(--primitives-padding-1);
+      background: var(--component-sidebar-profile-background);
+      border: var(--primitives-border-width-default) solid var(--component-sidebar-profile-border);
+      border-radius: var(--primitives-border-radius-sm);
+    }
+    .sidebar-profile-button,
+    .sidebar-item,
+    .sidebar-collapse {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: var(--primitives-padding-2);
+      padding: var(--primitives-padding-2) var(--primitives-padding-3);
+      border: var(--primitives-border-width-default) solid transparent;
+      border-radius: var(--primitives-border-radius-sm);
+      background: transparent;
+      color: var(--component-sidebar-item-text);
+      font: inherit;
+      font-size: var(--primitives-font-sizes-sm);
+      line-height: var(--primitives-line-heights-sm);
+      text-align: left;
+      cursor: pointer;
+    }
+    .sidebar-profile-button {
+      padding: var(--primitives-padding-2);
+      border-radius: var(--primitives-border-radius-xs);
+    }
+    .sidebar-item:hover,
+    .sidebar-profile-button:hover,
+    .sidebar-collapse:hover {
+      background: var(--component-sidebar-item-background-hover);
+    }
+    .sidebar-item:active,
+    .sidebar-item[aria-current="page"] {
+      background: var(--component-sidebar-item-background-active);
+    }
+    .sidebar-item:focus-visible,
+    .sidebar-profile-button:focus-visible,
+    .sidebar-collapse:focus-visible {
+      outline: var(--primitives-padding-1) solid var(--semantic-brand-ach-color-brand-muted);
+      outline-offset: var(--primitives-padding-1);
+    }
+    .sidebar-icon,
+    .sidebar-chevron {
+      color: var(--component-sidebar-item-icon);
+      font-size: var(--primitives-font-sizes-md);
+      line-height: var(--primitives-line-heights-md);
+    }
+    .sidebar-chevron {
+      margin-left: auto;
+      color: var(--component-sidebar-profile-icon);
+    }
+    .sidebar-profile-avatar {
+      display: grid;
+      flex: none;
+      place-items: center;
+      aspect-ratio: 1;
+      padding: var(--primitives-padding-2);
+      border-radius: var(--primitives-border-radius-infinite);
+      background: var(--component-avatar-initials-background);
+      color: var(--component-avatar-initials-text);
+      font-weight: 600;
+    }
+    .sidebar-profile-details {
+      display: flex;
+      min-width: 0;
+      flex: 1;
+      flex-direction: column;
+      gap: var(--primitives-padding-1);
+    }
+    .sidebar-profile-name {
+      color: var(--component-sidebar-profile-text);
+      font-weight: 600;
+    }
+    .sidebar-profile-meta {
+      color: var(--component-sidebar-profile-text-secondary);
+      font-size: var(--primitives-font-sizes-2xs);
+      line-height: var(--primitives-line-heights-2xs);
+    }
+    .sidebar-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--primitives-padding-1);
+    }
+    .sidebar-group-label {
+      padding: var(--primitives-padding-2) var(--primitives-padding-3);
+      color: var(--component-sidebar-group-label-text);
+      font-size: var(--primitives-font-sizes-2xs);
+      font-weight: 600;
+      letter-spacing: var(--primitives-letter-spacing-wider);
+      text-transform: uppercase;
+    }
+    .sidebar-product-caption {
+      color: var(--component-sidebar-item-secondary);
+      font-size: var(--primitives-font-sizes-xs);
+      line-height: var(--primitives-line-heights-xs);
+    }
+    .sidebar-item-content {
+      display: flex;
+      min-width: 0;
+      flex: 1;
+      flex-direction: column;
+      gap: var(--primitives-padding-1);
+    }
+    .sidebar-collapse {
+      margin-top: auto;
+    }
+    .sidebar-demo-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--primitives-padding-3);
+      padding: var(--primitives-padding-6);
+    }
+    .sidebar-demo-content h3 {
+      color: var(--semantic-text-ach-color-text-default);
+      font-size: var(--primitives-font-sizes-xl);
+      line-height: var(--primitives-line-heights-xl);
+    }
+    .sidebar-demo-content p {
+      color: var(--semantic-text-ach-color-text-secondary);
+    }
+    .sidebar.is-collapsed .sidebar-profile-details,
+    .sidebar.is-collapsed .sidebar-chevron,
+    .sidebar.is-collapsed .sidebar-group-label,
+    .sidebar.is-collapsed .sidebar-item-content,
+    .sidebar.is-collapsed .sidebar-collapse-label {
+      display: none;
+    }
+    .sidebar.is-collapsed .sidebar,
+    .sidebar.is-collapsed {
+      align-items: center;
+    }
+    .sidebar.is-collapsed .sidebar-profile-button,
+    .sidebar.is-collapsed .sidebar-item,
+    .sidebar.is-collapsed .sidebar-collapse {
+      justify-content: center;
+      padding: var(--primitives-padding-2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="topbar-title">ACH Design System</span>
+      <span class="topbar-subtitle">System Verification & Playground</span>
+    </div>
+    <div id="status-pill" class="badge badge-neutral">Checking tokens...</div>
+  </header>
+
+  <main>
+
+    <!-- Runtime Verification Diagnostic -->
+    <div class="diagnostic-panel" id="diagnostic-panel">
+      <div class="diagnostic-info">
+        <span class="diagnostic-heading" id="diagnostic-header">Inspecting CSS Variables</span>
+        <span class="diagnostic-details" id="diagnostic-output">Evaluating token resolution against tokens/tokens.css...</span>
+      </div>
+        <button class="btn btn-outlined" type="button" onclick="runDiagnostics()">Run check</button>
+    </div>
+
+    <!-- 1. Color System -->
+    <section>
+      <h2 class="section-title">Design Tokens: Core Palette</h2>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-brand-ach-color-brand-default);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Brand Default</div>
+            <div class="swatch-token">brand-default</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-brand-ach-color-brand-strong);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Brand Strong</div>
+            <div class="swatch-token">brand-strong</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-brand-ach-color-brand-subtle); border-bottom: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-subtle);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Brand Subtle</div>
+            <div class="swatch-token">brand-subtle</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-bg-ach-color-bg-canvas); border-bottom: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-subtle);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Canvas</div>
+            <div class="swatch-token">bg-canvas</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-bg-ach-color-bg-surface); border-bottom: var(--primitives-border-width-default) solid var(--semantic-border-ach-color-border-subtle);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Surface</div>
+            <div class="swatch-token">bg-surface</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-fg-success-ach-color-fg-success);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Success</div>
+            <div class="swatch-token">fg-success</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-fg-warning-ach-color-fg-warning-muted);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Warning</div>
+            <div class="swatch-token">fg-warning</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-preview" style="background: var(--semantic-fg-error-ach-color-fg-error);"></div>
+          <div class="swatch-meta">
+            <div class="swatch-label">Error</div>
+            <div class="swatch-token">fg-error</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Buttons -->
+    <section>
+      <h2 class="section-title">Button Primitives</h2>
+      <div class="row">
+        <button class="btn btn-brand" type="button" id="loading-demo" onclick="showLoadingState(this)">Continue</button>
+        <button class="btn btn-outlined" type="button">Save changes</button>
+        <button class="btn btn-outlined-brand" type="button">Review document</button>
+        <button class="btn btn-danger" type="button">Delete filing</button>
+        <button class="btn btn-link" type="button">View details</button>
+        <button class="btn btn-brand" disabled>Processing</button>
+        <span class="field-helper">The disabled state is shown while a filing is being processed.</span>
+      </div>
+    </section>
+
+    <!-- 3. Badges -->
+    <section>
+      <h2 class="section-title">Badges & Status Elements</h2>
+      <div class="row">
+        <span class="badge badge-success"><span class="badge-dot"></span>Verified</span>
+        <span class="badge badge-warning"><span class="badge-dot"></span>Pending submission</span>
+        <span class="badge badge-error"><span class="badge-dot"></span>Rejected</span>
+        <span class="badge badge-neutral"><span class="badge-dot"></span>Draft</span>
+      </div>
+    </section>
+
+    <!-- 4. Alerts -->
+    <section>
+      <h2 class="section-title">Alert Notifications</h2>
+      <div class="alert-stack">
+        <div class="alert alert-info">
+          <div>
+          <div class="alert-title">Masa pelaporan SPT Tahunan</div>
+          <div class="alert-body">Periode pelaporan aktif hingga 30 April. Pastikan seluruh bukti potong telah terverifikasi.</div>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <div>
+          <div class="alert-title">e-Billing berhasil dibuat</div>
+          <div class="alert-body">Kode Billing 012938472910 telah dibuat dan berlaku selama 48 jam.</div>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <div>
+          <div class="alert-title">Perbedaan bukti potong</div>
+          <div class="alert-body">PPh 21 yang dihitung berbeda Rp 42.500 dari daftar penggajian yang diunggah.</div>
+          </div>
+        </div>
+        <div class="alert alert-error">
+          <div>
+          <div class="alert-title">Pelaporan ditolak DJP</div>
+          <div class="alert-body">Sertifikat elektronik tidak valid. Unggah kembali sertifikat elektronik yang aktif.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Form Inputs -->
+    <section>
+      <h2 class="section-title">Form Controls</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="inp-npwp">Taxpayer ID (NPWP)</label>
+          <input class="field-input" id="inp-npwp" type="text" placeholder="01.234.567.8-901.000" />
+          <span class="field-helper">Format: 15-digit registered NPWP.</span>
+        </div>
+        <div class="field">
+          <label class="field-label" for="inp-email">Tax Officer Email</label>
+          <input class="field-input has-error" id="inp-email" type="email" value="finance@company" />
+          <span class="field-error-msg">Enter a valid corporate email domain.</span>
+        </div>
+        <div class="field">
+          <label class="field-label" for="inp-tax-period">Tax Period</label>
+          <input class="field-input" id="inp-tax-period" type="text" value="Masa Pajak 09-2026" disabled />
+          <span class="field-helper">Locked to the current active filing period.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Metrics & Stats -->
+    <section>
+      <h2 class="section-title">High Density Stats (Tabular Figures)</h2>
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-title">Gross Turnover</div>
+          <div class="stat-value">Rp 1.482.900.000</div>
+          <div class="stat-caption positive">+8.4% vs previous month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">PPN Payable</div>
+          <div class="stat-value">Rp 163.119.000</div>
+          <div class="stat-caption">Due in 5 days</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Validated Invoices</div>
+          <div class="stat-value">2,840</div>
+          <div class="stat-caption positive">100% matched</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Pending Approvals</div>
+          <div class="stat-value">12</div>
+          <div class="stat-caption">Requires action</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Table -->
+    <section>
+      <h2 class="section-title">Transactions Ledger</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Reference No.</th>
+              <th>Counterpart</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th style="text-align: right;">Amount (IDR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FPR-2026-0901</td>
+              <td>PT Sumber Makmur Sejahtera</td>
+              <td>28 Sep 2026</td>
+              <td><span class="badge badge-success"><span class="badge-dot"></span>Approved</span></td>
+              <td class="num">84.250.000</td>
+            </tr>
+            <tr>
+              <td>FPR-2026-0902</td>
+              <td>CV Digital Integra</td>
+              <td>28 Sep 2026</td>
+              <td><span class="badge badge-warning"><span class="badge-dot"></span>Pending</span></td>
+              <td class="num">19.400.000</td>
+            </tr>
+            <tr>
+              <td>FPR-2026-0903</td>
+              <td>PT Graha Logistik Nusantara</td>
+              <td>27 Sep 2026</td>
+              <td><span class="badge badge-info"><span class="badge-dot"></span>In review</span></td>
+              <td class="num">142.800.000</td>
+            </tr>
+            <tr>
+              <td>FPR-2026-0904</td>
+              <td>PT Delta Artha Mas</td>
+              <td>26 Sep 2026</td>
+              <td><span class="badge badge-neutral"><span class="badge-dot"></span>Draft</span></td>
+              <td class="num">6.750.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 8. Sidebar -->
+    <section>
+      <h2 class="section-title">Sidebar Navigation</h2>
+      <div class="sidebar-demo">
+        <nav class="sidebar" id="sidebar-demo" aria-label="Navigasi utama demonstrasi">
+          <div class="sidebar-profile">
+            <button class="sidebar-profile-button" type="button" aria-label="Pilih perusahaan PT Cakra Nusantara">
+              <span class="sidebar-profile-avatar" aria-hidden="true">CN</span>
+              <span class="sidebar-profile-details">
+                <span class="sidebar-profile-name">PT Cakra Nusantara</span>
+                <span class="sidebar-profile-meta">NPWP 01.234.567.8-901.000</span>
+              </span>
+              <span class="sidebar-chevron" aria-hidden="true">⌄</span>
+            </button>
+          </div>
+
+          <div class="sidebar-group">
+            <button class="sidebar-item" type="button" aria-current="page" data-sidebar-label="Beranda">
+              <span class="sidebar-icon" aria-hidden="true">⌂</span>
+              <span class="sidebar-item-content">Beranda</span>
+            </button>
+          </div>
+
+          <div class="sidebar-group">
+            <span class="sidebar-group-label">Transaksi</span>
+            <button class="sidebar-item" type="button" data-sidebar-label="Dokumen">
+              <span class="sidebar-icon" aria-hidden="true">▤</span>
+              <span class="sidebar-item-content">Dokumen</span>
+            </button>
+            <button class="sidebar-item" type="button" data-sidebar-label="Penjualan">
+              <span class="sidebar-icon" aria-hidden="true">↗</span>
+              <span class="sidebar-item-content">Penjualan</span>
+            </button>
+            <button class="sidebar-item" type="button" data-sidebar-label="Pembelian">
+              <span class="sidebar-icon" aria-hidden="true">↙</span>
+              <span class="sidebar-item-content">Pembelian</span>
+            </button>
+          </div>
+
+          <div class="sidebar-group">
+            <span class="sidebar-group-label">Produk</span>
+            <button class="sidebar-item" type="button" data-sidebar-label="Pajak dan Kepatuhan">
+              <span class="sidebar-icon" aria-hidden="true">◈</span>
+              <span class="sidebar-item-content"><span>Pajak dan Kepatuhan</span><span class="sidebar-product-caption">e-Faktur, e-Bupot, SPT</span></span>
+            </button>
+            <button class="sidebar-item" type="button" data-sidebar-label="Kas dan Pembiayaan">
+              <span class="sidebar-icon" aria-hidden="true">◉</span>
+              <span class="sidebar-item-content"><span>Kas dan Pembiayaan</span><span class="sidebar-product-caption">Arus kas dan limit tersedia</span></span>
+            </button>
+          </div>
+
+          <button class="sidebar-collapse" id="sidebar-collapse" type="button" aria-expanded="true" aria-controls="sidebar-demo">
+            <span class="sidebar-icon" aria-hidden="true">‹</span>
+            <span class="sidebar-collapse-label">Ciutkan sidebar</span>
+          </button>
+        </nav>
+        <div class="sidebar-demo-content">
+          <span class="badge badge-neutral">SidebarItem</span>
+          <h3 id="sidebar-preview-title">Beranda</h3>
+          <p id="sidebar-preview-copy">Pilih item navigasi untuk memeriksa state aktif. Gunakan kontrol di bawah sidebar untuk menguji tampilan diciutkan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Button Solid Primary -->
+    <section>
+      <h2 class="section-title">Button Solid Primary</h2>
+      <div class="row">
+        <button class="btn btn-solid-primary" type="button" onclick="showLoadingState(this)">Simpan perubahan</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function showLoadingState(button) {
+      if (button.disabled) return;
+
+      const originalLabel = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Memproses';
+
+      window.setTimeout(() => {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }, 1200);
+    }
+
+    function initialiseSidebarDemo() {
+      const sidebar = document.getElementById('sidebar-demo');
+      const collapseButton = document.getElementById('sidebar-collapse');
+      const previewTitle = document.getElementById('sidebar-preview-title');
+      const sidebarItems = sidebar.querySelectorAll('[data-sidebar-label]');
+
+      sidebarItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          sidebarItems.forEach((candidate) => candidate.removeAttribute('aria-current'));
+          item.setAttribute('aria-current', 'page');
+          previewTitle.textContent = item.dataset.sidebarLabel;
+        });
+      });
+
+      collapseButton.addEventListener('click', () => {
+        const isCollapsed = sidebar.classList.toggle('is-collapsed');
+        collapseButton.setAttribute('aria-expanded', String(!isCollapsed));
+        collapseButton.setAttribute('aria-label', isCollapsed ? 'Luaskan sidebar' : 'Ciutkan sidebar');
+        collapseButton.querySelector('.sidebar-icon').textContent = isCollapsed ? '›' : '‹';
+      });
+    }
+
+    function runDiagnostics() {
+      const probe = document.createElement('div');
+      probe.style.cssText = 'position:absolute;visibility:hidden;color:var(--semantic-brand-ach-color-brand-default);background:var(--semantic-bg-ach-color-bg-canvas);';
+      document.body.appendChild(probe);
+
+      const style = window.getComputedStyle(probe);
+      const brandColor = style.color;
+      const canvasBg = style.backgroundColor;
+      document.body.removeChild(probe);
+
+      const statusPill = document.getElementById('status-pill');
+      const diagHeader = document.getElementById('diagnostic-header');
+      const diagOutput = document.getElementById('diagnostic-output');
+
+      const tokenChecks = [
+        '--semantic-brand-ach-color-brand-default',
+        '--semantic-bg-ach-color-bg-canvas',
+        '--component-button-solid-brand-bg',
+        '--component-input-border-focus',
+        '--component-table-header-background',
+        '--component-alert-info-background',
+        '--component-badge-success-background'
+      ];
+      const rootStyle = window.getComputedStyle(document.documentElement);
+      const missingTokens = tokenChecks.filter((token) => !rootStyle.getPropertyValue(token).trim());
+      const isResolved = brandColor && brandColor !== '' && brandColor !== 'rgba(0, 0, 0, 0)' && missingTokens.length === 0;
+
+      if (isResolved) {
+        statusPill.className = 'badge badge-success';
+        statusPill.innerHTML = '<span class="badge-dot"></span>Tokens Connected';
+        diagHeader.textContent = 'Design Tokens Verified';
+        diagHeader.style.color = 'var(--semantic-fg-success-ach-color-fg-success)';
+        diagOutput.textContent = `${tokenChecks.length} semantic and component tokens resolved. Brand default: ${brandColor}. Canvas: ${canvasBg}.`;
+      } else {
+        statusPill.className = 'badge badge-error';
+        statusPill.innerHTML = '<span class="badge-dot"></span>Tokens Missing';
+        diagHeader.textContent = 'Token Resolution Failed';
+        diagHeader.style.color = 'var(--semantic-fg-error-ach-color-fg-error)';
+        diagOutput.textContent = `Missing tokens: ${missingTokens.join(', ') || 'computed colors could not be resolved'}. Confirm the tokens stylesheet is reachable from this page.`;
+      }
+    }
+
+    // Auto-run on mount
+    window.addEventListener('DOMContentLoaded', () => {
+      runDiagnostics();
+      initialiseSidebarDemo();
+    });
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Design Taste & Anti-Slop Foundation
 
 > **Authority**: Core foundation guide for visual taste, operational efficiency, and anti-slop standards across all Achilles products (OnlinePajak, Credor, Covia, Transaction Hub, Document Hub).  
-> **Agent Implementation**: See [`.agents/skills/ach-taste/SKILL.md`](../.agents/skills/ach-taste/SKILL.md).
+> **Agent implementation**: The [`ach-design-taste` skill](../.agents/skills/ach-taste/SKILL.md) routes agents here before UI work.
 
 ---
 
@@ -82,3 +82,32 @@ Every interactive control must explicitly account for all 6 states:
 | **Fake Div Screenshots** | Real components, real images, or clean typography | Div-based "mock preview boxes" scream placeholder slop. |
 | **Informal Filler Copy** | Calm, direct action verbs (*"Lapor SPT"*, *"Lanjutkan"*) | Financial and compliance software demands professionalism. |
 | **Raw Hex / Pixel Values** | Design tokens (`var(--ach-*)`) | Enforces design system integrity. |
+
+---
+
+## 5. Product context before implementation
+
+Before changing a UI, identify the product pillar, surface category, data-density need, primary persona, and regulatory risk:
+
+- **OnlinePajak**: tax compliance, legal precision, e-Faktur and e-Bupot.
+- **Credor**: liquidity, financing terms, and credit-risk review.
+- **Covia**: market intelligence, commodity prices, and supply-chain visibility.
+- **Platform hubs**: invoicing, e-signature, e-meterai, and cross-product workflows.
+
+Use the product context file for terminology and risk rules before selecting the density, friction, and motion dials.
+
+## 6. High-density data grids
+
+For a surface with `DATA_DENSITY >= 7`:
+
+- Keep table headers visible while rows scroll.
+- Show a bulk-action bar when one or more rows are selected.
+- Show data freshness, for example the latest sync time.
+- Provide actionable empty states with a neutral icon, direct title, and recovery action.
+- Use tabular figures and right-align numeric columns. Format Rupiah with a space after `Rp` and dot thousands separators.
+
+## 7. Complex workflows and high-stakes forms
+
+For multi-step forms, use a main form pane with a real-time summary panel when the decision benefits from it. Preserve entered data on back navigation, validate on blur or on explicit continuation, and warn before leaving unsaved work.
+
+For irreversible actions, use a two-step explicit confirmation with an impact summary. Final DJP submissions, fund disbursements, and batch deletion are high-friction actions.

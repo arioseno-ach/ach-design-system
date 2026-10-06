@@ -13,7 +13,7 @@ Baseline rules for every component, pattern, and template.
 - Minimum hit target: 44×44 CSS pixels.
 - Keyboard: all interactive elements focusable in a logical order.
 - Visible focus ring required; do not remove outline without a replacement.
-- Dialogs trap focus while open and return focus on close. See `patterns/dialog.pattern.md`.
+- Dialogs trap focus while open and return focus on close. See `patterns/dialog.md`.
 
 ## Semantics and names
 
